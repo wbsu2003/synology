@@ -1,0 +1,96 @@
+version: "3"
+services:
+
+  outline:
+    image: outlinewiki/outline
+    container_name: ol-outline
+    ports:
+      - "6070:3000"
+    depends_on:
+      - postgres
+      - redis
+      - storage
+    command: sh -c "yarn sequelize:migrate --env production-ssl-disabled && yarn start"
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+      - UTILS_SECRET=${UTILS_SECRET}
+      - URL=${URL}
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
+      - PGSSLMODE=${PGSSLMODE}
+      - REDIS_URL=${REDIS_URL}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_S3_UPLOAD_BUCKET_URL=${AWS_S3_UPLOAD_BUCKET_URL}
+      - AWS_S3_UPLOAD_BUCKET_NAME=${AWS_S3_UPLOAD_BUCKET_NAME}
+      - AWS_S3_UPLOAD_MAX_SIZE=${AWS_S3_UPLOAD_MAX_SIZE}
+      - AWS_S3_FORCE_PATH_STYLE=${AWS_S3_FORCE_PATH_STYLE}
+      - AWS_S3_ACL=${AWS_S3_ACL}
+      - FORCE_HTTPS=${FORCE_HTTPS}
+      - DEBUG=${DEBUG}
+      - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
+
+  redis:
+    image: redis
+    container_name: ${REDIS_HOST}
+    ports:
+      - "6479:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+
+  postgres:
+    image: postgres
+    container_name: ${POSTGRES_HOST}
+    ports:
+      - "5532:5432"
+    volumes:
+      - /volume2/docker/outline/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  storage:
+    image: minio/minio
+    container_name: ${MINIO_HOST}
+    ports:
+      - "9100:9000"
+    entrypoint: sh
+    command: -c 'minio server /data --console-address ":9001"'
+    #deploy:
+    #  restart_policy:
+    #    condition: on-failure
+    volumes:
+      - /volume2/docker/outline/fakes3:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  https-portal:
+    image: steveltn/https-portal
+    container_name: ol-http
+    ports:
+      - '6080:80'
+      - '6443:443'
+    links:
+      - outline
+      - storage
+    restart: always
+    volumes:
+      - /volume2/docker/outline/web:/var/lib/https-portal
+    healthcheck:
+      test: ["CMD", "service", "nginx", "status"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
