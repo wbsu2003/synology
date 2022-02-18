@@ -3,7 +3,7 @@ services:
 
   outline:
     image: outlinewiki/outline
-    container_name: ol-outline
+    container_name: ${OUTLINE_HOST}
     ports:
       - "6070:3000"
     depends_on:
@@ -30,6 +30,11 @@ services:
       - FORCE_HTTPS=${FORCE_HTTPS}
       - DEBUG=${DEBUG}
       - DEFAULT_LANGUAGE=${DEFAULT_LANGUAGE}
+      - SLACK_KEY=${SLACK_KEY}
+      - SLACK_SECRET=${SLACK_SECRET}
+    #  - AZURE_CLIENT_ID=${AZURE_CLIENT_ID}
+    #  - AZURE_CLIENT_SECRET=${AZURE_CLIENT_SECRET}
+    #  - AZURE_RESOURCE_APP_ID=${AZURE_RESOURCE_APP_ID}
 
   redis:
     image: redis
@@ -73,24 +78,6 @@ services:
       - /volume2/docker/outline/fakes3:/data
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
-      interval: 30s
-      timeout: 20s
-      retries: 3
-
-  https-portal:
-    image: steveltn/https-portal
-    container_name: ol-http
-    ports:
-      - '6080:80'
-      - '6443:443'
-    links:
-      - outline
-      - storage
-    restart: always
-    volumes:
-      - /volume2/docker/outline/web:/var/lib/https-portal
-    healthcheck:
-      test: ["CMD", "service", "nginx", "status"]
       interval: 30s
       timeout: 20s
       retries: 3
