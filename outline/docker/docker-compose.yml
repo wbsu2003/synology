@@ -69,13 +69,20 @@ services:
     container_name: ${MINIO_HOST}
     ports:
       - "9100:9000"
+      - "9101:9001"
     entrypoint: sh
     command: -c 'minio server /data --console-address ":9001"'
-    #deploy:
-    #  restart_policy:
-    #    condition: on-failure
+    deploy:
+      restart_policy:
+        condition: on-failure
     volumes:
       - /volume2/docker/outline/fakes3:/data
+    #  - /volume2/docker/outline/config:/root/.minio
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_SERVER_URL: http://${SYNOLOGY_IP}:9100
+      MINIO_BROWSER_REDIRECT_URL: http://${SYNOLOGY_IP}:9101
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
       interval: 30s
