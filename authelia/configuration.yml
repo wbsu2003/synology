@@ -1,0 +1,96 @@
+# yamllint disable rule:comments-indentation
+---
+###############################################################################
+#                           Authelia Configuration                            #
+###############################################################################
+
+theme: light #light/dark
+jwt_secret: 7tiqSgZY8kb8JthmoVoHWja2 #any text or number you want to add here to create jwt Token
+
+default_redirection_url: https://auth.laosu.ml:444 # where to redirect for a non-existent URL，一般填 authelia 的完整域名，有端口也要带上
+
+server:
+  host: 0.0.0.0
+  port: 9091
+  path: ""
+  read_buffer_size: 4096
+  write_buffer_size: 4096
+  enable_pprof: false
+  enable_expvars: false
+  disable_healthcheck: false
+  tls:
+    key: ""
+    certificate: ""
+
+log:
+  level: debug
+
+totp:
+  issuer: laosu.ml #your authelia top-level domain，这里不要带端口
+  period: 30
+  skew: 1
+
+authentication_backend:
+  disable_reset_password: false
+  refresh_interval: 5m
+  file:
+    path: /config/users_database.yml #this is where your authorized users are stored
+    password:
+      algorithm: argon2id
+      iterations: 1
+      key_length: 32
+      salt_length: 16
+      memory: 1024
+      parallelism: 8
+
+access_control:
+  default_policy: deny
+  rules:
+    ## bypass rule
+    - domain: "auth.laosu.ml" #This should be your authentication URL，这里不要带端口
+      policy: bypass
+    - domain: 
+      - "ad.laosu.ml" #example domain to protect，这里不要带端口
+      - "sp1.laosu.ml" #example domain to protect，这里不要带端口
+      policy: one_factor
+    - domain: 
+      - "nas.laosu.ml" #example subdomain to protect，这里不要带端口
+      - "n8n.laosu.ml" #example subdomain to protect，这里不要带端口
+      policy: two_factor
+
+session:
+  name: authelia_session
+  secret: unsecure_session_secret #any text or number you want to add here to create jwt Token
+  expiration: 3600  # 1 hour
+  inactivity: 300  # 5 minutes
+  domain: laosu.ml  # Should match whatever your root protected domain is，这里不要带端口
+
+regulation:
+  max_retries: 3
+  find_time: 10m
+  ban_time: 12h
+
+storage:
+  local:
+    path: /config/db.sqlite3 #数据库，也可以使用 MySQL.
+  encryption_key: tujXiHx2ety6HRErqquML35m #用于加密数据库的随机值，大于12位
+  
+
+notifier:
+  disable_startup_check: true
+  smtp:
+    host: smtp.88.com                        # 邮件 SMTP 服务器地址
+    port: 465                                # 邮件 SMTP 服务器端口
+    timeout: 5s                              # 超时
+    username: youremail@88.com               # 用户名
+    password: <你的邮件密码>                  # 密码
+    sender: "laosu <youremail@88.com>"        
+    identifier: localhost
+    subject: "[Authelia] {title}"
+    startup_check_address: youremail@88.com
+    disable_require_tls: false
+    disable_html_emails: false
+
+    tls:
+      skip_verify: false
+      minimum_version: TLS1.2
