@@ -1,0 +1,18 @@
+---
+###############################################################
+#                         Users Database                      #
+###############################################################
+
+# This file can be used if you do not have an LDAP set up.
+
+# List of users
+users:
+  authelia:
+    displayname: "Authelia User"
+    # 密码是 is 123456
+    password: "$argon2id$v=19$m=65536,t=1,p=8$MzV1MWw4U0FtZ3hzek9hZg$35thNbH+Vu5is9B3t57XlfHy4k7Co0sB1qabYkHGDUg"  # yamllint disable-line rule:line-length
+    email: wbsu2003@hotmail.com
+    groups:
+      - admins
+      - dev
+...
