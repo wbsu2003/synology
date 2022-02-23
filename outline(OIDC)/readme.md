@@ -2,3 +2,4 @@
 
 - `configuration.yml` 是 `Authelia` 的设置文件
 - `docker.env.txt` 是 `Outline` 的环境变量文件
+- `docker-compose.yml` 是 `Outline` 的一键启动文件
