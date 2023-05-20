@@ -3,13 +3,13 @@
 ##################################################################################
 
 # MySQL 5.X configuration properties
-#database.url=jdbc:mysql://localhost/wisemapping?useUnicode=yes&characterEncoding=UTF-8
-#database.driver=com.mysql.jdbc.Driver
-#database.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-#database.username=wisemapping
-#database.password=password
-#database.validation.enabled=true
-#database.validation.query=SELECT 1
+database.url=jdbc:mysql://192.168.0.197:3307/wisemapping?useUnicode=yes&characterEncoding=UTF-8
+database.driver=com.mysql.jdbc.Driver
+database.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+database.username=wisemapping
+database.password=123456
+database.validation.enabled=true
+database.validation.query=SELECT 1
 
 ## PostgreSQL  configuration properties
 #database.url=jdbc:postgresql://<hostname:port>/wisemapping
@@ -23,14 +23,14 @@
 
 
 # HSQL Configuration properties
-database.url=jdbc:hsqldb:file:${database.base.url}/db/wisemapping
-database.driver=org.hsqldb.jdbc.JDBCDriver
-database.hibernate.dialect=org.hibernate.dialect.HSQLDialect
+#database.url=jdbc:hsqldb:file:${database.base.url}/db/wisemapping
+#database.driver=org.hsqldb.jdbc.JDBCDriver
+#database.hibernate.dialect=org.hibernate.dialect.HSQLDialect
 
-database.username=sa
-database.password=
-database.validation.enabled=false
-database.validation.query=
+#database.username=sa
+#database.password=
+#database.validation.enabled=false
+#database.validation.query=
 
 ##################################################################################
 # Mail configuration. Must be configured to enable user registration confirmation.
@@ -39,11 +39,11 @@ database.validation.query=
 #------------------------
 # Plain SMTP Server Configuration
 #------------------------
-mail.smtp.port=25
-mail.smtp.host=localhost
-mail.username=root
-mail.password=
-mail.smtp.auth=false
+mail.smtp.port=465
+mail.smtp.host=smtp.88.com
+mail.username=wbsu2003@88.com
+mail.password=<第三方邮件客户端密码>
+mail.smtp.auth=true
 mail.smtp.starttls.enable=false
 mail.smtp.quitwait=false
 
@@ -66,14 +66,14 @@ mail.smtp.quitwait=false
 mail.serverSendEmail=root@localhost
 
 # Optional: Support account that the users could use to contact you. This address will appear in emails and in some places in the site.
-mail.supportEmail=root@localhost
+mail.supportEmail=wbsu2003@88.com
 
 ##################################################################################
 # Users Registration  Configuration
 ##################################################################################
 
 # Enable captcha confirmation
-google.recaptcha2.enabled = true
+google.recaptcha2.enabled = false
 
 # ReCaptcha is the default captcha. Public and private keys are required.
 # More Info: http://www.google.com/recaptcha .
@@ -86,7 +86,7 @@ google.recaptcha2.secretKey =  6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 
 # Site administration user. This user will have special permissions for operations such as removing users, set password
 # etc.
-admin.user = admin@wisemapping.org
+admin.user = wbsu2003@@hotmail.com
 
 # Base URL where WiseMapping is deployed. By default, It will be automatically inferred.
 #site.baseurl = http://localhost:8080
