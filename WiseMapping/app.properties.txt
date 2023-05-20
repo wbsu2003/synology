@@ -89,7 +89,7 @@ google.recaptcha2.secretKey =  6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 admin.user = wbsu2003@@hotmail.com
 
 # Base URL where WiseMapping is deployed. By default, It will be automatically inferred.
-site.baseurl = http://192.168.0.197:5000
+site.baseurl = http://192.168.0.197:8813
 
 # Site Homepage URL. This will be used as URL for homepage location.
 site.homepage = c/login
