@@ -39,11 +39,11 @@ database.validation.query=SELECT 1
 #------------------------
 # Plain SMTP Server Configuration
 #------------------------
-mail.smtp.port=465
+mail.smtp.port=25
 mail.smtp.host=smtp.88.com
 mail.username=wbsu2003@88.com
 mail.password=<第三方邮件客户端密码>
-mail.smtp.auth=true
+mail.smtp.auth=false
 mail.smtp.starttls.enable=false
 mail.smtp.quitwait=false
 
@@ -63,7 +63,7 @@ mail.smtp.quitwait=false
 #------------------------
 
 # Required: "from" email account that will appear in the emails sent from the sender.
-mail.serverSendEmail=root@localhost
+mail.serverSendEmail=wbsu2003@88.com
 
 # Optional: Support account that the users could use to contact you. This address will appear in emails and in some places in the site.
 mail.supportEmail=wbsu2003@88.com
@@ -89,7 +89,7 @@ google.recaptcha2.secretKey =  6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 admin.user = wbsu2003@@hotmail.com
 
 # Base URL where WiseMapping is deployed. By default, It will be automatically inferred.
-#site.baseurl = http://localhost:8080
+site.baseurl = http://192.168.0.197:5000
 
 # Site Homepage URL. This will be used as URL for homepage location.
 site.homepage = c/login
