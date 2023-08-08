@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  app:
+    image: joyqi/typecho:nightly-php7.4-fpm
+    container_name: typecho-server
+    restart: always
+    volumes:
+      - ./www:/app
+    environment:
+      - TIMEZONE=Asia/Shanghai
+    depends_on:
+      - db
+ 
+  db:
+    image: mariadb:10.6
+    container_name: typecho-mariadb
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=LHFeR2vSfiTR
+      - MYSQL_DATABASE=typecho
+      - MYSQL_USER=typecho
+      - MYSQL_PASSWORD=Ls59JAqRiymL
+      
+  web:
+    image: nginx
+    container_name: typecho-nginx
+    restart: always
+    ports:
+      - 8812:80
+    links:
+      - app
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    volumes_from:
+      - app
+    depends_on:
+      - app
