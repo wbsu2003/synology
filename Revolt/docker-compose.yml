@@ -1,0 +1,112 @@
+version: "3.8"
+
+services:
+  # MongoDB database
+  database:
+    image: mongo
+    container_name: revolt-database
+    restart: always
+    volumes:
+      - ./data:/data/db
+
+  # Redis server
+  redis:
+    image: eqalpha/keydb
+    container_name: revolt-redis
+    restart: always
+
+  # S3-compatible storage server
+  minio:
+    image: minio/minio
+    container_name: revolt-minio
+    command: server /data
+    env_file: env.txt
+    volumes:
+      - ./minio:/data
+    restart: always
+
+  # Caddy web server
+  caddy:
+    image: caddy
+    container_name: revolt-caddy
+    restart: always
+    env_file: env.txt
+    ports:
+      - "11080:80"
+      - "11443:443"
+    volumes:
+      - ./caddyfile.txt:/etc/caddy/Caddyfile
+      - ./caddy-data:/data
+      - ./caddy-config:/config
+
+  # API server (delta)
+  api:
+    image: ghcr.io/revoltchat/server
+    container_name: revolt-api
+    env_file: env.txt
+    depends_on:
+      - database
+      - redis
+      - caddy
+    restart: always
+
+  # Events service (quark)
+  events:
+    image: ghcr.io/revoltchat/bonfire
+    container_name: revolt-events
+    env_file: env.txt
+    depends_on:
+      - database
+      - redis
+      - caddy
+    restart: always
+
+  # Web App (revite)
+  web:
+    image: ghcr.io/revoltchat/client:master
+    container_name: revolt-web
+    env_file: env.txt
+    depends_on:
+      - caddy
+    restart: always
+
+  # File server (autumn)
+  autumn:
+    image: ghcr.io/revoltchat/autumn
+    container_name: revolt-autumn
+    env_file: env.txt
+    depends_on:
+      - database
+      - createbuckets
+      - caddy
+    environment:
+      - AUTUMN_MONGO_URI=mongodb://database
+    restart: always
+
+  # Metadata and image proxy (january)
+  january:
+    image: ghcr.io/revoltchat/january
+    container_name: revolt-january
+    depends_on:
+      - caddy
+    restart: always
+
+  # Create buckets for minio.
+  createbuckets:
+    image: minio/mc
+    container_name: revolt-mc
+    depends_on:
+      - minio
+    env_file: env.txt
+    entrypoint: >
+      /bin/sh -c "
+      while ! curl -s --output /dev/null --connect-timeout 1 http://minio:9000; do echo 'Waiting minio...' && sleep 0.1; done;
+      /usr/bin/mc alias set minio http://minio:9000 $MINIO_ROOT_USER $MINIO_ROOT_PASSWORD;
+      /usr/bin/mc mb minio/attachments;
+      /usr/bin/mc mb minio/avatars;
+      /usr/bin/mc mb minio/backgrounds;
+      /usr/bin/mc mb minio/icons;
+      /usr/bin/mc mb minio/banners;
+      /usr/bin/mc mb minio/emojis;
+      exit 0;
+      "
