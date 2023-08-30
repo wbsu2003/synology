@@ -1,0 +1,12 @@
+version: "2.1"
+
+services:
+  raneto:
+    image: raneto/raneto:latest
+    container_name: raneto
+    restart: unless-stopped
+    ports:
+      - 3844:3000
+    volumes:
+      - ./config:/opt/raneto/config
+      - ./content:/opt/raneto/content
