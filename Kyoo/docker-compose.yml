@@ -1,0 +1,77 @@
+version: "3.8"
+
+services:
+  back:
+    image: zoriya/kyoo_back:master
+    container_name: kyoo_back
+    restart: on-failure
+    env_file:
+      - ./env.txt
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./kyoo:/kyoo
+
+  front:
+    image: zoriya/kyoo_front:master
+    container_name: kyoo_front
+    restart: on-failure
+    environment:
+      - KYOO_URL=${KYOO_URL:-http://back:5000}
+      - PUBLIC_BACK_URL=${PUBLIC_BACK_URL}
+
+  scanner:
+    image: zoriya/kyoo_scanner:master
+    container_name: kyoo_scanner
+    restart: on-failure
+    depends_on:
+      back:
+        condition: service_healthy
+    env_file:
+      - ./env.txt
+    environment:
+      - KYOO_URL=${KYOO_URL:-http://back:5000}
+    volumes:
+      - ${LIBRARY_ROOT}:/video
+
+  transcoder:
+    image: zoriya/kyoo_transcoder:master
+    container_name: kyoo_transcoder
+    restart: on-failure
+    env_file:
+      - ./env.txt
+    volumes:
+      - ${LIBRARY_ROOT}:/video
+      - ${CACHE_ROOT}:/cache
+      - ./metadata:/metadata
+
+  ingress:
+    image: nginx
+    container_name: kyoo_nginx
+    restart: on-failure
+    environment:
+      - PORT=8901
+      - FRONT_URL=http://front:8901
+      - BACK_URL=${KYOO_URL:-http://back:5000}
+    volumes:
+      - ./nginx.conf:/etc/nginx/templates/kyoo.conf.template:ro
+    depends_on:
+      - back
+      - front
+    ports:
+      - "8901:8901"
+
+  postgres:
+    image: postgres:15
+    container_name: kyoo_postgres
+    restart: on-failure
+    env_file:
+      - ./env.txt
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
