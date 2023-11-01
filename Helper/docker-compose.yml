@@ -1,0 +1,46 @@
+version: "3.3"
+
+services:
+  sqldb:
+    image: mysql:5.7
+    container_name: helper-mysql
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=helper
+      - MYSQL_USER=helper
+      - MYSQL_PASSWORD=helper
+      - MYSQL_ROOT_PASSWORD=helper
+    command: --default-storage-engine innodb
+    restart: unless-stopped
+    healthcheck:
+      test: mysqladmin -p$$MYSQL_ROOT_PASSWORD ping -h localhost
+      interval: 20s
+      start_period: 10s
+      timeout: 10s
+      retries: 3
+  
+  helper:
+    image: eloufirhatim/helper:latest
+    container_name: helper-server
+    environment:
+      - DB_CONNECTION=mysql
+      - DB_HOST=sqldb
+      - DB_PORT=3306
+      - DB_DATABASE=helper
+      - DB_USERNAME=helper
+      - DB_PASSWORD=helper
+      - MAIL_MAILER=smtp
+      - MAIL_HOST=smtp.88.com
+      - MAIL_PORT=25
+      - MAIL_USERNAME=wbsu2003@88.com
+      - MAIL_PASSWORD=<你的第三方邮件客户端密码>
+      - MAIL_FROM_ADDRESS=wbsu2003@88.com
+      - MAIL_ENCRYPTION=null
+    depends_on:
+      - sqldb
+    restart: "no"
+    ports:
+      - 8114:8000
+    volumes:
+      - /etc/localtime:/etc/localtime
