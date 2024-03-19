@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+  teable:
+    image: ghcr.io/teableio/teable:latest
+    container_name: teable-app
+    restart: always
+    ports:
+      - '3091:3000'
+    volumes:
+      - ./data:/app/.assets:rw
+    env_file:
+      - env.txt
+    environment:
+      - TZ=${TIMEZONE}
+      - NEXT_ENV_IMAGES_ALL_REMOTE=true
+    depends_on:
+      - teable_db_migrate
+
+  teable_db:
+    image: postgres:15
+    container_name: teable-db
+    restart: always
+    ports:
+      - '42345:5432'
+    volumes:
+      - ./db:/var/lib/postgresql/data:rw
+    environment:
+      - TZ=${TIMEZONE}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    healthcheck:
+      test: ['CMD-SHELL', "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  teable_db_migrate:
+    image: ghcr.io/teableio/teable-db-migrate:latest
+    container_name: teable-db-migrate
+    environment:
+      - TZ=${TIMEZONE}
+      - PRISMA_DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@teable_db:5432/${POSTGRES_DB}
+    depends_on:
+      - teable_db
