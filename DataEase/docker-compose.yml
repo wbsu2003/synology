@@ -27,6 +27,6 @@ services:
     #  - MYSQL_DATABASE=dataease
       - MYSQL_ROOT_PASSWORD=123456
     volumes:
-      - ./conf/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./conf/my.conf:/etc/mysql/conf.d/my.cnf
       - ./mysql:/docker-entrypoint-initdb.d/
       - ./db:/var/lib/mysql
