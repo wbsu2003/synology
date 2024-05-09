@@ -29,4 +29,10 @@ cd /volume1/docker/dataease2
 
 # 一键启动
 docker-compose up -d
+
+# 如果出现连不上数据库，可以先启动数据库
+docker-compose up -d mysql-one mysql-two
+
+# 然后再启动其他的
+docker-compose up -d
 ```
