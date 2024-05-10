@@ -1,0 +1,2684 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ChiefOnboarding\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-22 23:46+0000\n"
+"PO-Revision-Date: 2024-05-10 20:25+0800\n"
+"Last-Translator: Jo Mio <jmworks@gmail.com>\n"
+"Language-Team: \n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: admin/admin_tasks/emails.py:9
+msgid "Can you please do this for me?"
+msgstr "您能帮我做这件事吗？"
+
+#: admin/admin_tasks/emails.py:16
+#, python-format
+msgid "Hi! Could you please help me with this? It's for our new hire %(name)s"
+msgstr "你好！你能帮我处理这个吗？这是给我们的新员工 %(name)s 的"
+
+#: admin/admin_tasks/emails.py:42
+msgid "A task has been assigned to you!"
+msgstr "有一个任务已分配给你！"
+
+#: admin/admin_tasks/emails.py:48
+#, python-format
+msgid "This is about task: %(title)s for %(new_hire)s"
+msgstr "这是关于新员工%(new_hire)s的任务：%(title)s"
+
+#: admin/admin_tasks/emails.py:59
+msgid "Last message: "
+msgstr "最新消息："
+
+#: admin/admin_tasks/emails.py:80
+#, python-format
+msgid "Someone added something to task: %(task_name)s"
+msgstr "有人向任务添加了一些内容：%(task_name)s"
+
+#: admin/admin_tasks/emails.py:88
+#, python-format
+msgid "Hi %(name)s"
+msgstr "你好 %(name)s"
+
+#: admin/admin_tasks/emails.py:96
+msgid ""
+"One of your todo items has been updated by someone else. Here is the message:"
+msgstr "你的待办事项之一已被其他人更新。以下是消息内容："
+
+#: admin/admin_tasks/models.py:14
+msgid "Low"
+msgstr "低"
+
+#: admin/admin_tasks/models.py:14
+msgid "Medium"
+msgstr "中"
+
+#: admin/admin_tasks/models.py:14
+msgid "High"
+msgstr "高"
+
+#: admin/admin_tasks/models.py:16
+msgid "No"
+msgstr "否"
+
+#: admin/admin_tasks/models.py:16 admin/admin_tasks/models.py:48
+#: admin/sequences/models.py:211 admin/sequences/models.py:413
+#: new_hire/templates/_colleague_intro.html:20
+#: new_hire/templates/_new_hire_colleagues_search.html:20
+#: new_hire/templates/_new_hire_colleagues_search.html:51 users/models.py:92
+msgid "Email"
+msgstr "电子邮件"
+
+#: admin/admin_tasks/models.py:16 admin/sequences/models.py:212
+#: admin/settings/views.py:79
+msgid "Slack"
+msgstr "Slack"
+
+#: admin/admin_tasks/models.py:22 admin/sequences/models.py:26
+#: admin/sequences/models.py:33
+msgid "New hire"
+msgstr "新员工"
+
+#: admin/admin_tasks/models.py:28
+#: admin/people/templates/new_hire_admin_tasks.html:21
+#: admin/people/templates/new_hire_admin_tasks.html:61
+#: admin/sequences/models.py:388
+msgid "Assigned to"
+msgstr "分配给"
+
+#: admin/admin_tasks/models.py:34 admin/people/templates/add_resources.html:12
+#: admin/people/templates/colleagues.html:27
+#: admin/people/templates/new_hire_add_task.html:13
+#: admin/people/templates/new_hires.html:11 admin/sequences/models.py:42
+#: admin/sequences/models.py:215 admin/sequences/models.py:382
+#: admin/sequences/templates/sequence.html:30
+#: admin/settings/templates/settings_admins.html:10
+#: admin/to_do/templates/templates.html:12 organization/models.py:25
+#: organization/models.py:234
+msgid "Name"
+msgstr "姓名"
+
+#: admin/admin_tasks/models.py:36
+msgid "Send email or text to extra user?"
+msgstr "是否向额外用户发送电子邮件或短信？"
+
+#: admin/admin_tasks/models.py:41 admin/sequences/models.py:406
+msgid "Slack user"
+msgstr "Slack用户"
+
+#: admin/admin_tasks/models.py:50
+msgid "Completed"
+msgstr "已完成"
+
+#: admin/admin_tasks/models.py:51 admin/appointments/forms.py:14
+#: admin/appointments/models.py:13
+msgid "Date"
+msgstr "日期"
+
+#: admin/admin_tasks/models.py:53 admin/sequences/models.py:417
+msgid "Priority"
+msgstr "优先级"
+
+#: admin/admin_tasks/models.py:72
+#, python-format
+msgid ""
+"%(name_assigned_to)s needs your help with this task:\n"
+"*%(task_name)s*\n"
+"_%(comment)s_"
+msgstr ""
+"%(name_assigned_to)s需要你的帮助完成这个任务：\n"
+"*%(task_name)s*\n"
+"_%(comment)s_"
+
+#: admin/admin_tasks/models.py:84 admin/admin_tasks/models.py:117
+#: admin/admin_tasks/models.py:166
+msgid "I have completed this"
+msgstr "我已完成此任务"
+
+#: admin/admin_tasks/models.py:102
+#, python-format
+msgid ""
+"_%(comment)s_\n"
+" by _%(name)s_"
+msgstr ""
+"_%(comment)s_\n"
+"由： _%(name)s_"
+
+#: admin/admin_tasks/models.py:107
+#, python-format
+msgid "You have just been assigned to *%(title)s* for *%(name)s*\n"
+msgstr "您刚刚被分配到了 *%(name)s* 的 *%(title)s* 任务\n"
+
+#: admin/admin_tasks/models.py:128
+msgid "New assigned task!"
+msgstr "有新的任务分配！"
+
+#: admin/admin_tasks/models.py:154
+#, python-format
+msgid ""
+"%(name)s added a message to your task:\n"
+"*%(task_title)s*\n"
+"_%(comment)s_"
+msgstr ""
+"%(name)s 向你的任务添加了一条消息：\n"
+"*%(task_title)s*\n"
+"_%(comment)s_"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:8
+#: users/templates/admin_base.html:120
+msgid "All tasks"
+msgstr "所有任务"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:13
+#: admin/admin_tasks/templates/admin_tasks_yours.html:13
+msgid "For new hire"
+msgstr "新员工任务"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:14
+#: admin/admin_tasks/templates/admin_tasks_yours.html:14
+#: admin/people/templates/new_hire_admin_tasks.html:22
+#: admin/people/templates/new_hire_admin_tasks.html:62
+msgid "Task"
+msgstr "任务"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:15
+#: admin/admin_tasks/templates/admin_tasks_yours.html:15
+#: admin/people/templates/new_hire_admin_tasks.html:23
+msgid "Due in"
+msgstr "截止日期"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:30
+#: admin/admin_tasks/templates/admin_tasks_yours.html:30
+#: admin/people/templates/new_hire_admin_tasks.html:37
+msgid "No deadline set"
+msgstr "未设置截止日期"
+
+#: admin/admin_tasks/templates/admin_tasks_all.html:46
+#: admin/people/templates/new_hire_admin_tasks.html:42
+msgid "There are no open items"
+msgstr "没有未完成的项目"
+
+#: admin/admin_tasks/templates/admin_tasks_create.html:13
+#: admin/integrations/views.py:34
+#: admin/introductions/templates/intro_update.html:31
+#: admin/resources/templates/resource_update.html:30
+#: admin/templates/templates/template_update.html:29
+msgid "Create"
+msgstr "创建"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:7
+#: admin/people/templates/new_hire_progress.html:32
+#: admin/people/templates/new_hire_progress.html:90
+msgid "Reopen"
+msgstr "重新打开"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:9
+#: admin/people/templates/new_hire_progress.html:73
+#: new_hire/templates/new_hire_resource_detail.html:21 slack_bot/views.py:676
+msgid "Complete"
+msgstr "完成"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:25
+#: admin/integrations/views.py:59 admin/integrations/views.py:76
+#: admin/integrations/views.py:107
+#: admin/introductions/templates/intro_update.html:31 admin/people/forms.py:193
+#: admin/people/new_hire_views.py:390
+#: admin/people/templates/new_hire_notes.html:19
+#: admin/resources/templates/resource_update.html:30
+#: admin/settings/templates/org_welcome_message_update.html:26
+#: admin/settings/templates/personal_language_update.html:13
+#: admin/settings/templates/settings_google_login_setup.html:12
+#: admin/templates/templates/template_update.html:29
+msgid "Update"
+msgstr "更新"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:36
+msgid "Add comment"
+msgstr "添加评论"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:43
+#: admin/sequences/templates/_item_form.html:12
+#: admin/settings/templates/personal_otp.html:28
+#: admin/settings/templates/token_create.html:11
+#: new_hire/templates/_content.html:124
+#: new_hire/templates/_question_form.html:6 slack_bot/views.py:733
+msgid "Submit"
+msgstr "提交"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:51
+msgid "Comments"
+msgstr "评论"
+
+#: admin/admin_tasks/templates/admin_tasks_detail.html:67
+msgid "There are no comments yet"
+msgstr "暂无评论"
+
+#: admin/admin_tasks/templates/admin_tasks_yours.html:8
+#: users/templates/admin_base.html:117
+msgid "Your tasks"
+msgstr "您的任务"
+
+#: admin/admin_tasks/templates/admin_tasks_yours.html:46
+msgid " There are no open items"
+msgstr "没有未完成的项目"
+
+#: admin/admin_tasks/views.py:66
+msgid "Task has been created"
+msgstr "任务已创建"
+
+#: admin/admin_tasks/views.py:86
+msgid "New task"
+msgstr "新任务"
+
+#: admin/admin_tasks/views.py:87 admin/admin_tasks/views.py:107
+#: admin/people/templates/_new_hire_menu.html:65 new_hire/views.py:81
+#: users/templates/admin_base.html:112
+msgid "Tasks"
+msgstr "任务"
+
+#: admin/admin_tasks/views.py:97
+msgid "Task has been updated"
+msgstr "任务已更新"
+
+#: admin/admin_tasks/views.py:106
+#, python-format
+msgid "Task: %(name)s"
+msgstr "任务： %(name)s"
+
+#: admin/admin_tasks/views.py:131
+msgid "Comment has been posted"
+msgstr "评论已发布"
+
+#: admin/appointments/forms.py:55 admin/appointments/forms.py:58
+#: admin/appointments/forms.py:60 admin/people/forms.py:365
+msgid "This field is required"
+msgstr "此字段为必填项"
+
+#: admin/appointments/models.py:11 admin/badges/models.py:15
+#: admin/preboarding/models.py:11 admin/sequences/models.py:216
+#: admin/sequences/models.py:217 admin/to_do/models.py:11
+msgid "Content"
+msgstr "内容"
+
+#: admin/appointments/models.py:12
+msgid "Time"
+msgstr "时间"
+
+#: admin/appointments/models.py:14
+msgid "Fixed date"
+msgstr "固定日期"
+
+#: admin/appointments/models.py:15
+msgid "On day"
+msgstr "当天"
+
+#: admin/appointments/views.py:21
+msgid "Appointment items"
+msgstr "预约事项"
+
+#: admin/appointments/views.py:22 admin/appointments/views.py:38
+#: admin/appointments/views.py:54 admin/badges/views.py:38
+#: admin/badges/views.py:54 admin/introductions/views.py:24
+#: admin/introductions/views.py:40 admin/introductions/views.py:68
+#: admin/preboarding/views.py:22 admin/preboarding/views.py:38
+#: admin/preboarding/views.py:54 admin/resources/views.py:22
+#: admin/resources/views.py:38 admin/resources/views.py:54
+#: admin/to_do/views.py:22 admin/to_do/views.py:38 admin/to_do/views.py:54
+msgid "templates"
+msgstr "模板"
+
+#: admin/appointments/views.py:33 admin/appointments/views.py:49
+msgid "Appointment item has been updated"
+msgstr "预约事项已更新"
+
+#: admin/appointments/views.py:37
+msgid "Create appointment item"
+msgstr "创建预约事项"
+
+#: admin/appointments/views.py:53
+msgid "Update appointment item"
+msgstr "更新预约事项"
+
+#: admin/appointments/views.py:64
+msgid "Appointment item has been removed"
+msgstr "预约事项已移除"
+
+#: admin/badges/models.py:13
+msgid "Image"
+msgstr "图片"
+
+#: admin/badges/views.py:33
+msgid "badge item has been updated"
+msgstr "徽章事项已更新"
+
+#: admin/badges/views.py:37
+msgid "Create badge item"
+msgstr "创建徽章事项"
+
+#: admin/badges/views.py:49
+msgid "Badge item has been updated"
+msgstr "徽章事项已更新"
+
+#: admin/badges/views.py:53
+msgid "Update badge item"
+msgstr "更新徽章事项"
+
+#: admin/badges/views.py:64
+msgid "badge item has been removed"
+msgstr "徽章事项已移除"
+
+#: admin/integrations/models.py:37
+#: admin/settings/templates/settings_base.html:12
+#: admin/settings/templates/settings_integrations.html:16
+msgid "Slack bot"
+msgstr "Slack机器人"
+
+#: admin/integrations/models.py:38
+msgid "Slack account creation"
+msgstr "创建Slack账号"
+
+#: admin/integrations/models.py:39
+msgid "Google account creation"
+msgstr "创建Google账号"
+
+#: admin/integrations/models.py:40
+msgid "Google Login"
+msgstr "Google登录"
+
+#: admin/integrations/models.py:41
+msgid "Asana"
+msgstr "Asana"
+
+#: admin/integrations/views.py:27
+msgid "Integration has been created!"
+msgstr "已创建集成！"
+
+#: admin/integrations/views.py:32 admin/integrations/views.py:74
+#: admin/integrations/views.py:105
+msgid "Add new integration"
+msgstr "添加新集成"
+
+#: admin/integrations/views.py:33 admin/integrations/views.py:58
+#: admin/integrations/views.py:75 admin/integrations/views.py:90
+#: admin/integrations/views.py:106 admin/settings/views.py:62
+#: admin/settings/views.py:80 admin/settings/views.py:91
+#: admin/settings/views.py:128 admin/settings/views.py:144
+#: admin/settings/views.py:188 admin/settings/views.py:272
+#: admin/settings/views.py:293 admin/settings/views.py:306
+#: admin/settings/views.py:316 admin/settings/views.py:351
+msgid "settings"
+msgstr "设置"
+
+#: admin/integrations/views.py:48 admin/integrations/views.py:69
+msgid "Integration has been updated!"
+msgstr "集成已更新！"
+
+#: admin/integrations/views.py:57
+msgid "Change Google login credentials"
+msgstr "更改Google登录凭据"
+
+#: admin/integrations/views.py:89
+msgid "Delete integration"
+msgstr "删除集成"
+
+#: admin/integrations/views.py:100
+msgid "Your config values have been updated!"
+msgstr "配置值已更新！"
+
+#: admin/integrations/views.py:175
+msgid "Could not optain slack authentication code."
+msgstr "无法获取Slack验证代码。"
+
+#: admin/integrations/views.py:196
+msgid ""
+"Slack has successfully been connected. You have a new bot in your workspace."
+msgstr "Slack已成功连接。您的工作区中有一个新的机器人。"
+
+#: admin/integrations/views.py:201
+msgid "Could not get tokens from Slack"
+msgstr "无法从Slack获取令牌”"
+
+#: admin/introductions/models.py:13
+msgid "Person to introduce"
+msgstr "介绍人"
+
+#: admin/introductions/templates/intro_update.html:10
+#: admin/resources/templates/resource_update.html:11
+#: admin/sequences/templates/sequence.html:10
+#: admin/templates/templates/template_update.html:10
+msgid "Duplicate"
+msgstr "复制"
+
+#: admin/introductions/templates/intro_update.html:16
+#: admin/people/templates/colleague_update.html:9
+#: admin/resources/templates/_chapter_options.html:36
+#: admin/resources/templates/resource_update.html:17
+#: admin/sequences/templates/_condition_line_item.html:25
+#: admin/sequences/templates/sequence.html:16
+#: admin/settings/templates/settings_admins.html:28
+#: admin/templates/templates/template_update.html:16
+msgid "Delete"
+msgstr "删除"
+
+#: admin/introductions/templates/intro_update.html:35
+msgid "Preview"
+msgstr "预览"
+
+#: admin/introductions/views.py:23
+msgid "Introduction items"
+msgstr "介绍事项"
+
+#: admin/introductions/views.py:35 admin/introductions/views.py:63
+msgid "Introduction item has been updated"
+msgstr "介绍事项已更新"
+
+#: admin/introductions/views.py:39
+msgid "Create introduction item"
+msgstr "创建介绍事项"
+
+#: admin/introductions/views.py:67
+msgid "Update introduction item"
+msgstr "更新介绍事项"
+
+#: admin/introductions/views.py:78
+msgid "Introduction item has been removed"
+msgstr "介绍事项已被删除"
+
+#: admin/people/forms.py:26 users/templates/admin_base.html:102
+msgid "Sequences"
+msgstr "序列"
+
+#: admin/people/forms.py:29 admin/people/forms.py:141
+#: admin/people/templates/new_hires.html:12 users/models.py:166
+msgid "Start date"
+msgstr "开始日期"
+
+#: admin/people/forms.py:106 slack_bot/views.py:380
+msgid "Create new hire"
+msgstr "创建新员工"
+
+#: admin/people/forms.py:329
+msgid "Select sequences you want to add "
+msgstr "选择要添加的序列"
+
+#: admin/people/forms.py:338
+msgid "This task has just been reopened! "
+msgstr "此任务刚刚重新开启！"
+
+#: admin/people/forms.py:341
+msgid "Message that you want to leave for your new hire:"
+msgstr "您要留给新员工的消息："
+
+#: admin/people/forms.py:349 admin/people/forms.py:358
+msgid "Send via email"
+msgstr "通过电子邮件发送"
+
+#: admin/people/forms.py:349
+msgid "Send via text"
+msgstr "通过短信发送"
+
+#: admin/people/forms.py:370
+msgid "Send type"
+msgstr "发送方式"
+
+#: admin/people/new_hire_views.py:66 users/templates/admin_base.html:59
+msgid "New hires"
+msgstr "新员工"
+
+#: admin/people/new_hire_views.py:67 admin/people/new_hire_views.py:85
+#: admin/people/views.py:39
+msgid "people"
+msgstr "人"
+
+#: admin/people/new_hire_views.py:79
+msgid "New hire has been created"
+msgstr "新员工已创建"
+
+#: admin/people/new_hire_views.py:84
+msgid "Add new hire"
+msgstr "添加新员工"
+
+#: admin/people/new_hire_views.py:202
+msgid "Sequence(s) have been added to this new hire"
+msgstr "序列已添加到该新员工"
+
+#: admin/people/new_hire_views.py:256
+msgid "Sequence items were removed from this new hire"
+msgstr "从新员工中删除了序列项目"
+
+#: admin/people/new_hire_views.py:292
+msgid "Sent email to new hire"
+msgstr "已向新员工发送电子邮件"
+
+#: admin/people/new_hire_views.py:305 admin/people/new_hire_views.py:355
+#: admin/people/new_hire_views.py:389 admin/people/new_hire_views.py:421
+#: admin/people/new_hire_views.py:448 admin/people/new_hire_views.py:462
+#: admin/people/new_hire_views.py:481 admin/people/new_hire_views.py:505
+#: admin/people/new_hire_views.py:623 admin/people/new_hire_views.py:638
+#: admin/people/new_hire_views.py:650 admin/people/new_hire_views.py:716
+#: admin/people/new_hire_views.py:734 admin/people/new_hire_views.py:753
+#: admin/people/templates/new_hire_detail.html:100
+#: admin/people/templates/not_triggered_conditions.html:16
+#: admin/sequences/templates/_sequence_condition.html:56
+msgid "new hire"
+msgstr "新员工"
+
+#: admin/people/new_hire_views.py:345
+msgid "New hire has been updated"
+msgstr "新员工已更新"
+
+#: admin/people/new_hire_views.py:366
+msgid "New hire is now a normal account."
+msgstr "新员工现在是普通账户。"
+
+#: admin/people/new_hire_views.py:379
+msgid "Extra info has been added!"
+msgstr "附加信息已添加！"
+
+#: admin/people/new_hire_views.py:405
+msgid "Note has been added"
+msgstr "备注已添加"
+
+#: admin/people/new_hire_views.py:538
+msgid "Don't forget this item!"
+msgstr "别忘了这个项目！"
+
+#: admin/people/new_hire_views.py:546
+msgid "Reminder has been sent!"
+msgstr "提醒已发送！"
+
+#: admin/people/new_hire_views.py:604
+msgid "Item has been reopened"
+msgstr "项目已重新打开"
+
+#: admin/people/new_hire_views.py:701
+msgid "Account has been created"
+msgstr "账户已创建"
+
+#: admin/people/new_hire_views.py:703
+msgid "Account could not be created"
+msgstr "无法创建账户"
+
+#: admin/people/new_hire_views.py:750
+#, python-format
+msgid "Add/Remove templates for %(name)s"
+msgstr "%(name)s 的模板添加/删除"
+
+#: admin/people/new_hire_views.py:805
+msgid "New hire has been removed"
+msgstr "新员工已被移除"
+
+#: admin/people/templates/_new_hire_access_card.html:21
+msgid "Checking status"
+msgstr "正在检查状态"
+
+#: admin/people/templates/_new_hire_access_card.html:26
+msgid "Error when trying to reach service"
+msgstr "尝试访问服务时出错"
+
+#: admin/people/templates/_new_hire_access_card.html:29
+msgid "Activated"
+msgstr "已激活"
+
+#: admin/people/templates/_new_hire_access_card.html:33
+#: admin/people/templates/_toggle_colleague_access.html:20
+#: admin/people/views.py:202 admin/people/views.py:255
+msgid "Give access"
+msgstr "给予访问权限"
+
+#: admin/people/templates/_new_hire_form_answers.html:28
+msgid "Download user uploaded file"
+msgstr "下载用户上传的文件"
+
+#: admin/people/templates/_new_hire_menu.html:21
+msgid "Overview"
+msgstr "概览"
+
+#: admin/people/templates/_new_hire_menu.html:35
+#: admin/people/templates/new_hire_profile.html:12
+msgid "Profile"
+msgstr "个人资料"
+
+#: admin/people/templates/_new_hire_menu.html:45
+msgid "Access"
+msgstr "访问权限"
+
+#: admin/people/templates/_new_hire_menu.html:81
+#: admin/people/templates/new_hires.html:14
+msgid "Progress"
+msgstr "进展"
+
+#: admin/people/templates/_new_hire_menu.html:99
+msgid "Forms"
+msgstr "表单"
+
+#: admin/people/templates/_new_hire_menu.html:115
+#: admin/people/templates/new_hire_notes.html:26
+msgid "Notes"
+msgstr "备注"
+
+#: admin/people/templates/_new_hire_menu.html:133
+#: admin/sequences/templates/_sequence_templates_list.html:23
+msgid "Admin Tasks"
+msgstr "管理员任务"
+
+#: admin/people/templates/_new_hire_menu.html:149
+msgid "Welcome Messages"
+msgstr "欢迎消息"
+
+#: admin/people/templates/_new_hire_settings_menu.html:4
+#: users/templates/admin_base.html:130
+msgid "Settings"
+msgstr "设置"
+
+#: admin/people/templates/_new_hire_settings_menu.html:8
+msgid "Send Preboarding email"
+msgstr "发送预入职邮件"
+
+#: admin/people/templates/_new_hire_settings_menu.html:12
+msgid "Send login email (day 1 and onwards)"
+msgstr "发送登录邮件（第1天及以后）"
+
+#: admin/people/templates/_new_hire_settings_menu.html:14
+msgid "Add Sequence"
+msgstr "添加序列"
+
+#: admin/people/templates/_new_hire_settings_menu.html:16
+msgid "Delete user"
+msgstr "删除用户"
+
+#: admin/people/templates/_toggle_button_new_hire_template.html:5
+#: admin/people/templates/_toggle_button_resources.html:5
+msgid "Added"
+msgstr "已添加"
+
+#: admin/people/templates/_toggle_button_new_hire_template.html:7
+#: admin/people/templates/_toggle_button_resources.html:7
+#: users/templates/admin_base.html:161
+msgid "Add"
+msgstr "添加"
+
+#: admin/people/templates/_toggle_colleague_access.html:22
+#: admin/people/views.py:252
+msgid "Revoke access"
+msgstr "撤销访问权限"
+
+#: admin/people/templates/_trigger_sequence_items.html:4
+msgid "Done!"
+msgstr "完成！"
+
+#: admin/people/templates/_trigger_sequence_items.html:6
+msgid "Trigger all these items now"
+msgstr "立即触发所有这些项目"
+
+#: admin/people/templates/add_resources.html:13
+#: admin/people/templates/new_hire_add_task.html:14
+#: admin/templates/forms.py:123 admin/to_do/templates/templates.html:13
+#: organization/models.py:236
+msgid "Tags"
+msgstr "标签"
+
+#: admin/people/templates/colleague_create.html:10
+#: admin/people/templates/colleague_update.html:19
+msgid "Colleague"
+msgstr "同事"
+
+#: admin/people/templates/colleague_update.html:29
+msgid "Resources available"
+msgstr "可用资源"
+
+#: admin/people/templates/colleague_update.html:44
+msgid "No resources are available to this user yet"
+msgstr "该用户尚无可用资源"
+
+#: admin/people/templates/colleague_update.html:52
+#: admin/people/templates/new_hire_tasks.html:19
+#: admin/people/templates/new_hire_tasks.html:49
+#: admin/people/templates/new_hire_tasks.html:79
+#: admin/people/templates/new_hire_tasks.html:109
+#: admin/people/templates/new_hire_tasks.html:139
+#: admin/settings/templates/settings_admins.html:22
+msgid "Change"
+msgstr "更改"
+
+#: admin/people/templates/colleagues.html:14
+msgid "Sync with Slack"
+msgstr "与 Slack 同步"
+
+#: admin/people/templates/colleagues.html:28
+#: admin/people/templates/new_hires.html:13 users/models.py:98
+msgid "Position"
+msgstr "位置"
+
+#: admin/people/templates/colleagues.html:49
+#: admin/people/templates/new_hires.html:38
+#: admin/to_do/templates/templates.html:24
+#: new_hire/templates/_new_hire_to_do_item.html:13
+msgid "View"
+msgstr "查看"
+
+#: admin/people/templates/give_new_hire_access.html:13
+msgid "No additional data needed, please click on 'create user' to continue."
+msgstr "无需额外数据，请点击“创建用户”继续。"
+
+#: admin/people/templates/give_new_hire_access.html:18
+msgid "Create user"
+msgstr "创建用户"
+
+#: admin/people/templates/new_hire_access.html:19
+msgid "You have not enabled any integrations for account provisitioning."
+msgstr "您尚未启用任何账户配置的集成。"
+
+#: admin/people/templates/new_hire_admin_tasks.html:14
+msgid "Open admin tasks"
+msgstr "打开管理员任务"
+
+#: admin/people/templates/new_hire_admin_tasks.html:54
+msgid "Completed admin tasks"
+msgstr "已完成的管理员任务"
+
+#: admin/people/templates/new_hire_admin_tasks.html:80
+msgid "There are no closed items"
+msgstr "没有已关闭的项目"
+
+#: admin/people/templates/new_hire_course_answers.html:13
+msgid "Answers"
+msgstr "答案"
+
+#: admin/people/templates/new_hire_course_answers.html:32
+msgid "Answer given by new hire: "
+msgstr "新员工给出的答案："
+
+#: admin/people/templates/new_hire_course_answers.html:42
+msgid "No answers were given in yet."
+msgstr "尚未提供答案。"
+
+#: admin/people/templates/new_hire_delete.html:9
+#, python-format
+msgid "Are you sure you want to delete %(full_name)s?"
+msgstr "您确定要删除 %(full_name)s 吗？"
+
+#: admin/people/templates/new_hire_delete.html:12
+msgid ""
+"Are you sure you want to delete this new hire? You have two options here:"
+msgstr "您确定要删除这位新员工吗？您有两个选择："
+
+#: admin/people/templates/new_hire_delete.html:14
+msgid ""
+"Move them to a normal account, so they keep having access to things like the "
+"colleagues page and resources."
+msgstr "将其移至普通帐户，以便他们继续访问同事页面和资源。"
+
+#: admin/people/templates/new_hire_delete.html:15
+msgid ""
+"Completely remove them. Access to ChiefOnboarding will be revoke entirely. "
+"Third party accounts remain."
+msgstr ""
+"彻底删除他们。将完全取消对 ChiefOnboarding 的访问权限。第三方帐户将保留。"
+
+#: admin/people/templates/new_hire_delete.html:21
+msgid "Delete account"
+msgstr "删除帐户"
+
+#: admin/people/templates/new_hire_delete.html:25
+msgid "Migrate account to normal account"
+msgstr "将帐户迁移到普通帐户"
+
+#: admin/people/templates/new_hire_detail.html:14
+msgid ""
+"Some integrations require extra information. Make sure to complete those!"
+msgstr "某些集成需要额外的信息。请确保完成这些信息！"
+
+#: admin/people/templates/new_hire_detail.html:17
+msgid "Complete info"
+msgstr "完成信息"
+
+#: admin/people/templates/new_hire_detail.html:27
+msgid "What's up next..."
+msgstr "接下来是什么…"
+
+#: admin/people/templates/new_hire_detail.html:39
+msgid "Before first day"
+msgstr "入职前"
+
+#: admin/people/templates/new_hire_detail.html:70
+#, python-format
+msgid "%(start_day)s - New hire's first day!"
+msgstr "%(start_day)s - 新员工的第一天！"
+
+#: admin/people/templates/new_hire_detail.html:83
+msgid "at"
+msgstr "在"
+
+#: admin/people/templates/new_hire_detail.html:86
+#: admin/sequences/templates/_sequence_condition.html:20
+msgid "When these tasks are completed:"
+msgstr "当这些任务完成时："
+
+#: admin/people/templates/new_hire_detail.html:129
+#: admin/people/templates/not_triggered_conditions.html:51
+#: admin/sequences/templates/_sequence_condition.html:91
+msgid "admins"
+msgstr "管理员"
+
+#: admin/people/templates/new_hire_detail.html:157
+msgid "Latest activity..."
+msgstr "最新活动…"
+
+#: admin/people/templates/new_hire_detail.html:170
+msgid "By"
+msgstr "由"
+
+#: admin/people/templates/new_hire_detail.html:182
+msgid "No items yet"
+msgstr "尚无项目"
+
+#: admin/people/templates/new_hire_forms.html:14
+msgid "Preboarding forms"
+msgstr "入职前表格"
+
+#: admin/people/templates/new_hire_forms.html:28
+msgid "To do forms"
+msgstr "待办事项表格"
+
+#: admin/people/templates/new_hire_forms.html:42
+msgid "This new hire has not filled in any forms yet"
+msgstr "这位新员工尚未填写任何表格"
+
+#: admin/people/templates/new_hire_notes.html:12
+msgid "Add note"
+msgstr "添加备注"
+
+#: admin/people/templates/new_hire_notes.html:45
+msgid "There are no notes yet"
+msgstr "尚无备注"
+
+#: admin/people/templates/new_hire_progress.html:15 admin/to_do/views.py:21
+#: new_hire/templates/new_hire_base.html:122 slack_bot/slack_misc.py:50
+msgid "To do items"
+msgstr "待办事项"
+
+#: admin/people/templates/new_hire_progress.html:38
+#: admin/people/templates/new_hire_progress.html:96
+msgid "Remind"
+msgstr "提醒"
+
+#: admin/people/templates/new_hire_progress.html:56
+msgid "Courses"
+msgstr "课程"
+
+#: admin/people/templates/new_hire_progress.html:79
+msgid "New hire has completed the course!"
+msgstr "新员工已完成课程！"
+
+#: admin/people/templates/new_hire_progress.html:81
+#, python-format
+msgid " At step %(step)s of %(amount_chapters)s "
+msgstr " 课程的第 %(amount_chapters)s 步，共 %(step)s  步"
+
+#: admin/people/templates/new_hire_progress.html:113
+msgid "There are no todo items or resources assigned to this user"
+msgstr "此用户尚未分配任何待办事项或资源"
+
+#: admin/people/templates/new_hire_reopen_task.html:12
+msgid "Reopen this task for new hire"
+msgstr "重新打开此任务以供新员工使用"
+
+#: admin/people/templates/new_hire_tasks.html:15
+#: users/templates/admin_base.html:89
+msgid "Preboarding"
+msgstr "入职前"
+
+#: admin/people/templates/new_hire_tasks.html:34
+msgid "There are no preboarding items yet"
+msgstr "尚无入职前事项"
+
+#: admin/people/templates/new_hire_tasks.html:45
+#: users/templates/admin_base.html:77
+msgid "To do"
+msgstr "待办事项"
+
+#: admin/people/templates/new_hire_tasks.html:64
+msgid "There are no to do items yet"
+msgstr "尚无待办事项"
+
+#: admin/people/templates/new_hire_tasks.html:75 admin/sequences/emails.py:57
+#: admin/sequences/templates/_sequence_templates_list.html:8
+#: new_hire/templates/new_hire_base.html:136
+#: new_hire/templates/new_hire_resources.html:12 slack_bot/slack_misc.py:58
+#: users/templates/admin_base.html:80
+msgid "Resources"
+msgstr "资源"
+
+#: admin/people/templates/new_hire_tasks.html:94
+msgid "There are no resource items yet"
+msgstr "尚无资源项"
+
+#: admin/people/templates/new_hire_tasks.html:105
+#: admin/sequences/templates/_sequence_templates_list.html:11
+#: users/templates/admin_base.html:83
+msgid "Introductions"
+msgstr "介绍"
+
+#: admin/people/templates/new_hire_tasks.html:124
+msgid "There are no introduction items yet"
+msgstr "尚无介绍项"
+
+#: admin/people/templates/new_hire_tasks.html:135
+#: admin/sequences/templates/_sequence_templates_list.html:14
+#: users/templates/admin_base.html:86
+msgid "Appointments"
+msgstr "预约"
+
+#: admin/people/templates/new_hire_tasks.html:154
+msgid "There are no appointment items yet"
+msgstr "尚无预约事项"
+
+#: admin/people/templates/new_hire_welcome_messages.html:13
+msgid "Welcome messages from colleagues"
+msgstr "同事的欢迎信息"
+
+#: admin/people/templates/new_hire_welcome_messages.html:32
+msgid ""
+"No one has created any messages yet. This needs to be done through Slack."
+msgstr "目前还没有人创建任何消息。这需要通过 Slack 完成。"
+
+#: admin/people/templates/not_triggered_conditions.html:9
+msgid "Items that will never be triggered"
+msgstr "永远不会触发的项目"
+
+#: admin/people/templates/not_triggered_conditions.html:69
+msgid "Condition"
+msgstr "条件"
+
+#: admin/people/templates/not_triggered_conditions.html:74
+msgid "Go to new hire"
+msgstr "返回新员工"
+
+#: admin/people/templates/trigger_preboarding_notification.html:11
+msgid ""
+"This will send an email or text message to your new hire providing them the "
+"link to use see their pre-boarding page. You can send a text message (if "
+"mobile number is provided) or an email. Make sure that you are sending the "
+"email to an email address that is accessible to them right now!"
+msgstr ""
+"这将向新员工发送电子邮件或短信，提供链接以查看他们的预备工作页面。您可以发送"
+"短信（如果提供了手机号码）或电子邮件。请确保将电子邮件发送到他们当前可以访问"
+"的电子邮件地址！"
+
+#: admin/people/templates/trigger_preboarding_notification.html:13
+msgid "Send preboarding notification"
+msgstr "发送预备工作通知"
+
+#: admin/people/views.py:38 new_hire/templates/new_hire_base.html:152
+#: new_hire/templates/new_hire_colleagues.html:20
+#: users/templates/admin_base.html:62
+msgid "Colleagues"
+msgstr "同事"
+
+#: admin/people/views.py:51
+msgid "Colleague has been added"
+msgstr "已添加同事"
+
+#: admin/people/views.py:61
+msgid "Create new colleague"
+msgstr "创建新同事"
+
+#: admin/people/views.py:62 admin/people/views.py:82 admin/people/views.py:107
+msgid "Employee"
+msgstr "员工"
+
+#: admin/people/views.py:72
+msgid "Employee has been updated"
+msgstr "员工已更新"
+
+#: admin/people/views.py:92
+msgid "Colleague has been removed"
+msgstr "已移除同事"
+
+#: admin/people/views.py:104
+#, python-format
+msgid "Add new resource for %(name)s"
+msgstr "为 %(name)s 添加新资源"
+
+#: admin/people/views.py:208
+msgid "Could not find user"
+msgstr "找不到用户"
+
+#: admin/people/views.py:223 admin/settings/views.py:234
+msgid "resources"
+msgstr "资源"
+
+#: admin/people/views.py:235
+msgid "Revoke Slack access"
+msgstr "撤销 Slack 访问权限"
+
+#: admin/preboarding/views.py:21
+#: admin/sequences/templates/_sequence_templates_list.html:20
+msgid "Preboarding items"
+msgstr "预备工作项目"
+
+#: admin/preboarding/views.py:33 admin/preboarding/views.py:49
+msgid "Preboarding item has been updated"
+msgstr "预备工作项目已更新"
+
+#: admin/preboarding/views.py:37
+msgid "Create preboarding item"
+msgstr "创建预备工作项目"
+
+#: admin/preboarding/views.py:53
+msgid "Update preboarding item"
+msgstr "更新预备工作项目"
+
+#: admin/preboarding/views.py:64
+msgid "Preboarding item has been removed"
+msgstr "预备工作项目已移除"
+
+#: admin/resources/forms.py:24 admin/resources/models.py:59
+msgid "Category"
+msgstr "类别"
+
+#: admin/resources/forms.py:95
+msgid "Do not use only numbers as a category. Always add some text."
+msgstr "不要仅使用数字作为类别。请始终添加一些文本。"
+
+#: admin/resources/forms.py:138
+msgid "When enabled, new hires will have to walk through this"
+msgstr "启用后，新员工必须完成这一步骤"
+
+#: admin/resources/forms.py:140
+msgid "If disabled, it will turn into a normal resource after completing"
+msgstr "如果禁用，完成后它将变成普通资源"
+
+#: admin/resources/models.py:16
+msgid "page"
+msgstr "页面"
+
+#: admin/resources/models.py:16
+msgid "folder"
+msgstr "文件夹"
+
+#: admin/resources/models.py:16
+msgid "questions"
+msgstr "问题"
+
+#: admin/resources/models.py:63
+msgid "Is a course item"
+msgstr "是课程项目"
+
+#: admin/resources/models.py:65
+msgid "Workday that this item is due"
+msgstr "此项目到期的工作日"
+
+#: admin/resources/models.py:68
+msgid "Remove item when new hire walked through"
+msgstr "新员工完成后移除项目"
+
+#: admin/resources/models.py:85 admin/sequences/models.py:58
+#: organization/models.py:263
+#, python-format
+msgid "%(name)s (duplicate)"
+msgstr "%(name)s (重复)"
+
+#: admin/resources/templates/_chapter_options.html:29
+msgid "Add page"
+msgstr "添加页面"
+
+#: admin/resources/templates/_chapter_options.html:30
+msgid "Add folder"
+msgstr "添加文件夹"
+
+#: admin/resources/templates/_chapter_options.html:31
+msgid "Add questions"
+msgstr "添加问题"
+
+#: admin/resources/templates/_chapter_options.html:33
+msgid "Move up"
+msgstr "向上移动"
+
+#: admin/resources/templates/_chapter_options.html:34
+msgid "Move down"
+msgstr "向下移动"
+
+#: admin/resources/templates/chapter_field.html:15
+#: new_hire/templates/new_hire_resource_detail.html:15
+msgid "Chapters"
+msgstr "章节"
+
+#: admin/resources/templates/chapter_field.html:33
+msgid "Folders can't have content"
+msgstr "文件夹不能包含内容"
+
+#: admin/resources/templates/chapter_field.html:38
+msgid "The question you want to ask:"
+msgstr "您想要提问的问题："
+
+#: admin/resources/templates/chapter_field.html:56
+msgid "Add option"
+msgstr "添加选项"
+
+#: admin/resources/templates/chapter_field.html:58
+msgid "Add question"
+msgstr "添加问题"
+
+#: admin/resources/templates/resource_update.html:45
+#: admin/sequences/templates/sequence.html:269
+msgid "Start typing here..."
+msgstr "在此处开始输入…"
+
+#: admin/resources/templates/resource_update.html:46
+#: admin/sequences/templates/sequence.html:270
+msgid "New item"
+msgstr "新项目"
+
+#: admin/resources/views.py:21
+msgid "Resource items"
+msgstr "资源项目"
+
+#: admin/resources/views.py:33 admin/resources/views.py:49
+msgid "Resource item has been updated"
+msgstr "资源项目已更新"
+
+#: admin/resources/views.py:37
+msgid "Create resource item"
+msgstr "创建资源项目"
+
+#: admin/resources/views.py:53
+msgid "Update resource item"
+msgstr "更新资源项目"
+
+#: admin/resources/views.py:64
+msgid "Resource item has been removed"
+msgstr "资源项目已移除"
+
+#: admin/sequences/emails.py:27 admin/sequences/models.py:236
+msgid "Here is an update!"
+msgstr "这是一个更新！"
+
+#: admin/sequences/emails.py:36
+msgid "Todo item"
+msgstr "待办事项"
+
+#: admin/sequences/emails.py:38
+#: admin/sequences/templates/_sequence_templates_list.html:5
+msgid "Todo items"
+msgstr "待办事项"
+
+#: admin/sequences/emails.py:55 slack_bot/slack_resource.py:86
+msgid "Resource"
+msgstr "资源"
+
+#: admin/sequences/emails.py:74
+msgid "Badge"
+msgstr "徽章"
+
+#: admin/sequences/emails.py:74
+#: admin/sequences/templates/_sequence_templates_list.html:17
+#: users/templates/admin_base.html:92
+msgid "Badges"
+msgstr "徽章"
+
+#: admin/sequences/forms.py:35 admin/sequences/templates/sequence.html:52
+msgid "Add block"
+msgstr "添加块"
+
+#: admin/sequences/forms.py:73
+msgid "Must be in a 5 minute interval."
+msgstr "必须为5分钟间隔。"
+
+#: admin/sequences/forms.py:84
+msgid ""
+"You cannot use 0 or less. The day before starting is 1 and the first workday "
+"is 1"
+msgstr "不能使用 0 或更少。开始之前的一天是 1，第一个工作日是 1"
+
+#: admin/sequences/forms.py:102
+#, python-format
+msgid ""
+"Time must be in an interval of 5 minutes. %(minutes)s must end in 0 or 5."
+msgstr "时间必须为5分钟间隔。%(minutes)s 必须以0或5结尾。"
+
+#: admin/sequences/forms.py:119
+msgid "You must add at least one to do item"
+msgstr "您必须至少添加一个待办事项"
+
+#: admin/sequences/forms.py:121
+msgid "Both the time and days have to be filled in."
+msgstr "时间和天数都必须填写。"
+
+#: admin/sequences/forms.py:133
+msgid "Edit block"
+msgstr "编辑块"
+
+#: admin/sequences/forms.py:147 admin/sequences/models.py:415
+msgid "Due date"
+msgstr "截止日期"
+
+#: admin/sequences/models.py:27 admin/sequences/models.py:34
+#: admin/settings/forms.py:186 admin/settings/forms.py:199 users/models.py:32
+#: users/models.py:160
+msgid "Manager"
+msgstr "经理"
+
+#: admin/sequences/models.py:28 admin/sequences/models.py:35
+#: users/models.py:153
+msgid "Buddy"
+msgstr "伙伴"
+
+#: admin/sequences/models.py:29 admin/sequences/models.py:36
+msgid "Custom"
+msgstr "自定义"
+
+#: admin/sequences/models.py:37 admin/sequences/models.py:228
+#: admin/to_do/models.py:22
+msgid "Slack channel"
+msgstr "Slack频道"
+
+#: admin/sequences/models.py:213
+msgid "Text"
+msgstr "文本"
+
+#: admin/sequences/models.py:218
+msgid "Send via"
+msgstr "通过…发送"
+
+#: admin/sequences/models.py:221
+msgid "Send to"
+msgstr "发送至"
+
+#: admin/sequences/models.py:234
+msgid "Subject"
+msgstr "主题"
+
+#: admin/sequences/models.py:240
+msgid "For"
+msgstr "来自"
+
+#: admin/sequences/models.py:384
+msgid "Comment"
+msgstr "评论"
+
+#: admin/sequences/models.py:394
+msgid "Pick user"
+msgstr "选择用户"
+
+#: admin/sequences/models.py:400
+msgid "Send email or Slack message to extra user?"
+msgstr "向其他用户发送电子邮件或Slack消息？"
+
+#: admin/sequences/models.py:539
+msgid "After new hire has started"
+msgstr "新员工开始后"
+
+#: admin/sequences/models.py:540
+msgid "Based on one or more to do item(s)"
+msgstr "基于一个或多个待办事项"
+
+#: admin/sequences/models.py:541
+msgid "Before the new hire has started"
+msgstr "新员工开始前"
+
+#: admin/sequences/models.py:542
+msgid "Without trigger"
+msgstr "无触发器"
+
+#: admin/sequences/models.py:548
+msgid "Block type"
+msgstr "块类型"
+
+#: admin/sequences/models.py:551
+msgid "Amount of days before/after new hire has started"
+msgstr "新员工开始前/后的天数"
+
+#: admin/sequences/models.py:553
+msgid "At"
+msgstr "于"
+
+#: admin/sequences/models.py:556
+msgid "Trigger after these to do items have been completed:"
+msgstr "完成以下待办事项后触发："
+
+#: admin/sequences/tasks.py:67
+#, python-format
+msgid "*Congrats, you unlocked: %(item_name)s *"
+msgstr "*恭喜，您解锁了： %(item_name)s *"
+
+#: admin/sequences/tasks.py:85 admin/sequences/tasks.py:87
+#: admin/sequences/tasks.py:95 admin/sequences/tasks.py:106
+#: admin/sequences/tasks.py:108
+msgid "Here are some new items for you!"
+msgstr "这里有一些给你的新项目！"
+
+#: admin/sequences/templates/_condition_line_item.html:23
+#: admin/settings/templates/org_welcome_message_update.html:27
+msgid "Send test message"
+msgstr "发送测试消息"
+
+#: admin/sequences/templates/_item_form.html:8
+msgid "No additional data needed."
+msgstr "不需要额外的数据。"
+
+#: admin/sequences/templates/_sequence_condition.html:18
+#, python-format
+msgid "On day %(days)s at %(time)s"
+msgstr "在第 %(days)s 天的  %(time)s"
+
+#: admin/sequences/templates/_sequence_condition.html:27
+#, python-format
+msgid "%(days)s days before starting at %(time)s"
+msgstr "在开始前的 %(days)s 天的 %(time)s"
+
+#: admin/sequences/templates/_sequence_condition.html:29
+msgid "Without any trigger - assign directly"
+msgstr "没有任何触发器 - 直接分配"
+
+#: admin/sequences/templates/_sequence_templates_list.html:3
+#: users/templates/admin_base.html:72
+msgid "Templates"
+msgstr "模板"
+
+#: admin/sequences/templates/_sequence_templates_list.html:26
+msgid "Slack message"
+msgstr "Slack消息"
+
+#: admin/sequences/templates/_sequence_templates_list.html:29
+msgid "Text message"
+msgstr "短信"
+
+#: admin/sequences/templates/_sequence_templates_list.html:32
+msgid "Email message"
+msgstr "电子邮件消息"
+
+#: admin/sequences/templates/_sequence_templates_list.html:35
+#: admin/settings/templates/settings_base.html:15 admin/settings/views.py:315
+msgid "Integrations"
+msgstr "集成"
+
+#: admin/sequences/templates/_sequence_templates_list.html:72
+msgid "Create new one"
+msgstr "创建新的"
+
+#: admin/sequences/templates/sequence.html:25
+msgid ""
+"All changes will be automatically saved. This doesn't impact current new "
+"hires."
+msgstr "有更改将自动保存。这不会影响当前的新员工。"
+
+#: admin/sequences/templates/sequence.html:69
+msgid "Block"
+msgstr "块"
+
+#: admin/sequences/templates/sequence.html:84
+msgid "Item"
+msgstr "项目"
+
+#: admin/sequences/views.py:40
+msgid "Sequence items"
+msgstr "序列项目"
+
+#: admin/sequences/views.py:71
+msgid "Sequence"
+msgstr "序列"
+
+#: admin/sequences/views.py:419
+msgid "Sequence item has been removed"
+msgstr "序列项目已被移除"
+
+#: admin/settings/forms.py:20 organization/models.py:33 users/models.py:119
+msgid "Timezone"
+msgstr "时区"
+
+#: admin/settings/forms.py:23
+msgid "Sequences that are preselected for all new hires:"
+msgstr "为所有新员工预选的序列："
+
+#: admin/settings/forms.py:52
+msgid "Login options"
+msgstr "登录选项"
+
+#: admin/settings/forms.py:104
+msgid "You must enable at least one login option"
+msgstr "您必须至少启用一个登录选项"
+
+#: admin/settings/forms.py:186 admin/settings/forms.py:199 users/models.py:31
+msgid "Administrator"
+msgstr "管理员"
+
+#: admin/settings/forms.py:218 admin/to_do/templates/wysiwyg_field.html:11
+msgid ""
+"You can use &#123;&#123; first_name &#125;&#125;, &#123;&#123; last_name "
+"&#125;&#125;, &#123;&#123; position &#125;&#125;, &#123;&#123; department "
+"&#125;&#125;, &#123;&#123; manager &#125;&#125;, and &#123;&#123; buddy "
+"&#125;&#125; in the editor. It will be replaced by the values corresponding "
+"to the new hire."
+msgstr ""
+"您可以在编辑器中使用 &#123;&#123; first_name &#125;&#125;, &#123;&#123; "
+"last_name &#125;&#125;, &#123;&#123; position &#125;&#125;, &#123;&#123; "
+"department &#125;&#125;,  &#123;&#123; manager &#125;&#125;, そして &#123;"
+"&#123; buddy &#125;&#125; 它将被替换为与新员工相对应的值。"
+
+#: admin/settings/forms.py:231
+msgid "6 digit OTP code"
+msgstr "6位数字OTP代码"
+
+#: admin/settings/forms.py:232
+msgid "This is the code that your 2FA application shows you."
+msgstr "这是您的2FA应用程序显示的代码。"
+
+#: admin/settings/forms.py:248
+msgid "OTP token was not correct. Please wait 30 seconds and then try again"
+msgstr "OTP令牌不正确。请等待30秒后重试"
+
+#: admin/settings/templates/_personal_tabs.html:4 organization/models.py:27
+#: users/models.py:128
+msgid "Language"
+msgstr "语言"
+
+#: admin/settings/templates/_personal_tabs.html:7
+msgid "OTP"
+msgstr "OTP"
+
+#: admin/settings/templates/integration-delete.html:11
+msgid "Are you sure you want to remove this integration?"
+msgstr "您确定要删除此集成吗？"
+
+#: admin/settings/templates/integration-delete.html:13
+msgid "Disconnect integration"
+msgstr "断开集成"
+
+#: admin/settings/templates/personal_otp.html:11
+msgid "OTP has been enabled for your account"
+msgstr "已为您的账户启用OTP"
+
+#: admin/settings/templates/personal_otp.html:13
+msgid ""
+"Please copy and save the keys below. These will only show once - you won't "
+"be able to see them again."
+msgstr "请复制并保存下面的密钥。它们只会显示一次 - 您将无法再次看到它们。"
+
+#: admin/settings/templates/personal_otp.html:14
+msgid "You will need these if you ever lose access to your 2FA app."
+msgstr "如果您失去对2FA应用的访问权限，您将需要这些密钥。"
+
+#: admin/settings/templates/personal_otp.html:24
+msgid ""
+"Please scan the code below with your 2FA app of your choice. We recommend "
+"andOTP or Aegis (but you can use Google Authenticator or Authy)."
+msgstr ""
+"请使用您选择的双因素认证（2FA）应用程序扫描下面的二维码。我们推荐使用 andOTP "
+"或 Aegis（但您也可以使用 Google Authenticator 或 Authy）。"
+
+#: admin/settings/templates/settings_admins.html:11 users/models.py:134
+msgid "Role"
+msgstr "角色"
+
+#: admin/settings/templates/settings_admins_create.html:12
+msgid "Add administrator"
+msgstr "添加管理员"
+
+#: admin/settings/templates/settings_admins_update.html:12
+msgid "Update administrator"
+msgstr "更新管理员"
+
+#: admin/settings/templates/settings_base.html:11
+msgid "General"
+msgstr "常规"
+
+#: admin/settings/templates/settings_base.html:13
+msgid "Welcome messages"
+msgstr "欢迎消息"
+
+#: admin/settings/templates/settings_base.html:14
+msgid "Personal"
+msgstr "个人"
+
+#: admin/settings/templates/settings_base.html:16 admin/settings/views.py:90
+msgid "Administrators"
+msgstr "管理员"
+
+#: admin/settings/templates/settings_integrations.html:10
+msgid "Official Integrations"
+msgstr "官方集成"
+
+#: admin/settings/templates/settings_integrations.html:20
+msgid "Update Slack channels list"
+msgstr "更新 Slack 频道列表"
+
+#: admin/settings/templates/settings_integrations.html:26
+#: admin/settings/templates/settings_integrations.html:39
+#: admin/settings/templates/settings_integrations.html:80
+msgid "Remove"
+msgstr "移除"
+
+#: admin/settings/templates/settings_integrations.html:30
+#: admin/settings/templates/settings_integrations.html:43
+#: admin/settings/views.py:352
+msgid "Enable"
+msgstr "启用"
+
+#: admin/settings/templates/settings_integrations.html:35
+msgid "Google login"
+msgstr "Google 登录"
+
+#: admin/settings/templates/settings_integrations.html:57
+msgid "Custom integrations"
+msgstr "自定义集成"
+
+#: admin/settings/templates/settings_integrations.html:68
+msgid "OAuth"
+msgstr "OAuth"
+
+#: admin/settings/templates/settings_integrations.html:73
+msgid "Update credentials"
+msgstr "更新凭据"
+
+#: admin/settings/templates/settings_integrations.html:77
+msgid "Update manifest"
+msgstr "更新清单"
+
+#: admin/settings/templates/settings_integrations.html:86
+msgid "No custom integrations yet"
+msgstr "尚无自定义集成"
+
+#: admin/settings/templates/token_create.html:14
+msgid "Redirect URL:"
+msgstr "重定向 URL:"
+
+#: admin/settings/views.py:46
+msgid "Organization info has been updated"
+msgstr "组织信息已更新"
+
+#: admin/settings/views.py:61
+msgid "General Updates"
+msgstr "常规更新"
+
+#: admin/settings/views.py:72
+msgid "Slackbot settings have been updated"
+msgstr "Slackbot 设置已更新"
+
+#: admin/settings/views.py:122
+msgid "Admin/Manager has been created"
+msgstr "管理员/经理已创建"
+
+#: admin/settings/views.py:127
+msgid "Add Administrator"
+msgstr "添加管理员"
+
+#: admin/settings/views.py:139
+msgid "Admin/Manager has been changed"
+msgstr "管理员/经理已更改"
+
+#: admin/settings/views.py:143
+msgid "Change Administrator"
+msgstr "更改管理员"
+
+#: admin/settings/views.py:164
+msgid "Admin is now a normal user"
+msgstr "管理员现在是普通用户"
+
+#: admin/settings/views.py:173
+msgid "Message has been updated"
+msgstr "消息已更新"
+
+#: admin/settings/views.py:187
+msgid "Update welcome messages"
+msgstr "更新欢迎消息"
+
+#: admin/settings/views.py:255
+msgid "Your default language has been updated"
+msgstr "您的默认语言已更新"
+
+#: admin/settings/views.py:271
+msgid "Update your default language"
+msgstr "更新默认语言"
+
+#: admin/settings/views.py:293 admin/settings/views.py:304
+msgid "TOTP 2FA"
+msgstr "TOTP 2FA (基于时间的一次性密码)"
+
+#: admin/settings/views.py:304
+msgid "Enable TOTP 2FA"
+msgstr "启用 TOTP 2FA"
+
+#: admin/settings/views.py:344
+msgid "Slack has now been connected, check if you got a message from your bot!"
+msgstr "Slack 现已连接，请检查是否收到了来自您的机器人的消息！"
+
+#: admin/settings/views.py:350
+msgid "Slack bot setup"
+msgstr "设置 Slack 机器人"
+
+#: admin/settings/views.py:370
+msgid ""
+"Newly added channels have been added. Make sure the bot has been added to "
+"that channel too if you want it to post/get info there!"
+msgstr ""
+"新添加的频道已添加。如果您希望机器人在该频道上发布/获取信息，请确保将其添加到"
+"该频道！"
+
+#: admin/to_do/forms.py:58
+msgid "Please select a channel to send the message to"
+msgstr "请选择要发送消息的频道"
+
+#: admin/to_do/forms.py:67
+msgid ""
+"Let your new hire now that the answers are going to be shared with the team!"
+msgstr "让新员工知道答案将与团队共享！"
+
+#: admin/to_do/models.py:12
+msgid "Due on day"
+msgstr "截止日"
+
+#: admin/to_do/models.py:16
+msgid "Post new hire's answers from form (if applicable) back to Slack channel"
+msgstr "将新员工的表单答案（如适用）发布回 Slack 频道"
+
+#: admin/to_do/templates/templates.html:30
+msgid "No items available"
+msgstr "无可用项目"
+
+#: admin/to_do/templates/upload_field.html:16
+msgid "Current file:"
+msgstr "当前文件："
+
+#: admin/to_do/templates/upload_field.html:25
+#: new_hire/templates/_content.html:112
+msgid "Upload"
+msgstr "上传"
+
+#: admin/to_do/templates/upload_field.html:29
+msgid "File storage has not been set up. Please read the docs here: "
+msgstr "尚未设置文件存储。请阅读此处的文档："
+
+#: admin/to_do/templates/upload_field.html:29
+msgid "Set up object storage"
+msgstr "设置对象存储"
+
+#: admin/to_do/views.py:33
+msgid "To do item has been created"
+msgstr "待办事项已创建"
+
+#: admin/to_do/views.py:37
+msgid "Create to do item"
+msgstr "创建待办事项"
+
+#: admin/to_do/views.py:49
+msgid "To do item has been updated"
+msgstr "待办事项已更新"
+
+#: admin/to_do/views.py:53
+msgid "Update to do item"
+msgstr "更新待办事项"
+
+#: admin/to_do/views.py:64
+msgid "To do item has been removed"
+msgstr "待办事项已删除"
+
+#: back/settings.py:368
+msgid "English"
+msgstr "英语"
+
+#: back/settings.py:369
+msgid "Dutch"
+msgstr "荷兰语"
+
+#: back/settings.py:370
+msgid "French"
+msgstr "法语"
+
+#: back/settings.py:371
+msgid "German"
+msgstr "德语"
+
+#: back/settings.py:372
+msgid "Turkish"
+msgstr "土耳其语"
+
+#: back/settings.py:373
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+#: back/settings.py:374
+msgid "Japanese"
+msgstr "日语"
+
+#: back/settings.py:375
+msgid "Spanish"
+msgstr "西班牙语"
+
+#: back/templatetags/model_functions.py:12
+msgid "N/A"
+msgstr "无"
+
+#: back/templatetags/model_functions.py:21
+msgid "Could not find answer"
+msgstr "找不到答案"
+
+#: misc/templates/_paginator.html:10
+msgid "prev"
+msgstr "上一页"
+
+#: misc/templates/_paginator.html:20
+msgid "last"
+msgstr "最后一页"
+
+#: new_hire/templates/_colleague_intro.html:25
+#: new_hire/templates/_new_hire_colleagues_search.html:25
+#: new_hire/templates/_new_hire_colleagues_search.html:56
+msgid "Call"
+msgstr "电话"
+
+#: new_hire/templates/_content.html:40
+msgid "Sorry, your browser doesn't support embedded videos."
+msgstr "抱歉，您的浏览器不支持嵌入式视频。"
+
+#: new_hire/templates/_content.html:66
+msgid "You have already completed this form"
+msgstr "您已经完成了这个表单"
+
+#: new_hire/templates/_content.html:116
+msgid "File storage has not been set up. Please ask your supervisor."
+msgstr "文件存储尚未设置。请询问您的主管。"
+
+#: new_hire/templates/_new_hire_colleagues_search.html:65
+msgid "No search results found"
+msgstr "未找到搜索结果"
+
+#: new_hire/templates/_new_hire_resources_search.html:17
+msgid "See resource"
+msgstr "查看资源"
+
+#: new_hire/templates/_new_hire_resources_search.html:25
+msgid "We couldn't find any matching items"
+msgstr "我们找不到任何匹配的项目"
+
+#: new_hire/templates/new_hire_base.html:9 users/templates/admin_base.html:9
+#: users/templates/no_login_base.html:9
+msgid "Employee onboarding"
+msgstr "员工入职"
+
+#: new_hire/templates/new_hire_base.html:104 users/templates/admin_base.html:41
+msgid "Logout"
+msgstr "退出"
+
+#: new_hire/templates/new_hire_preboarding.html:66
+#: new_hire/templates/new_hire_to_do.html:47
+#: new_hire/templates/slack_form.html:38 users/templates/admin_base.html:254
+msgid "uploading..."
+msgstr "上传中…"
+
+#: new_hire/templates/new_hire_resource_detail.html:46
+msgid "Answers saved successfully! Click on 'next' to continue."
+msgstr "答案已成功保存！点击“下一步”继续。"
+
+#: new_hire/templates/new_hire_resource_detail.html:54 new_hire/views.py:266
+#: slack_bot/slack_resource.py:96 slack_bot/views.py:678
+msgid "Next"
+msgstr "下一步"
+
+#: new_hire/templates/new_hire_resources.html:38
+msgid "Search through resources"
+msgstr "搜索资源"
+
+#: new_hire/templates/new_hire_to_do.html:18
+msgid "I have completed this item!"
+msgstr "我已完成此项任务！"
+
+#: new_hire/templates/new_hire_to_do.html:22
+msgid "You have already completed this item"
+msgstr "您已经完成了此项任务"
+
+#: new_hire/templates/new_hire_to_dos.html:13
+msgid "You have completed all to do items"
+msgstr "您已完成所有待办事项"
+
+#: new_hire/templates/new_hire_to_dos.html:20
+msgid "Overdue"
+msgstr "逾期"
+
+#: new_hire/templates/new_hire_to_dos.html:35
+msgid "Due on "
+msgstr "截止日期"
+
+#: new_hire/templates/new_hire_to_dos.html:35
+msgid "Not urgent"
+msgstr "不紧急"
+
+#: new_hire/views.py:80
+msgid "Things you need to do"
+msgstr "您需要完成的任务"
+
+#: new_hire/views.py:129
+msgid "This form could not be processed - invalid items"
+msgstr "无法处理此表单 - 无效的项目"
+
+#: new_hire/views.py:135
+msgid "You have submitted this form successfully"
+msgstr "您已成功提交此表单"
+
+#: new_hire/views.py:268
+msgid "Restart"
+msgstr "重新开始"
+
+#: new_hire/views.py:375
+msgid "You have completed this course!"
+msgstr "您已完成此课程！"
+
+#: organization/models.py:41
+msgid "Base color"
+msgstr "基础颜色"
+
+#: organization/models.py:44
+msgid "Accent color"
+msgstr "强调颜色"
+
+#: organization/models.py:47
+msgid "Bot color"
+msgstr "机器人颜色"
+
+#: organization/models.py:50
+msgid "Logo"
+msgstr "标志"
+
+#: organization/models.py:55
+msgid "Allow users to login with their username and password"
+msgstr "允许用户使用用户名和密码登录"
+
+#: organization/models.py:59
+msgid "Allow users to login with their Google account"
+msgstr "允许用户使用Google账号登录"
+
+#: organization/models.py:62
+msgid "Allow users to login with their Slack account"
+msgstr "允许用户使用Slack账号登录"
+
+#: organization/models.py:67
+msgid "Send email to new hire with login credentials"
+msgstr "向新员工发送包含登录凭据的电子邮件"
+
+#: organization/models.py:69
+msgid ""
+"This is essential if you want your new hires to login to the dashboard "
+"(disable if using Slack)"
+msgstr "如果您希望新员工登录到仪表盘，则这是必需的（如果使用Slack，请禁用）"
+
+#: organization/models.py:75
+msgid "Send email to new hire with updates"
+msgstr "向新员工发送更新的电子邮件"
+
+#: organization/models.py:76
+msgid "Think of new tasks that got assigned, new resources, badges... "
+msgstr "考虑到已分配的新任务、新资源、徽章等等…"
+
+#: organization/models.py:80
+msgid "Send email to new hire when tasks are overdue"
+msgstr "在任务逾期时向新员工发送电子邮件"
+
+#: organization/models.py:81
+msgid "These are daily emails, until all overdue tasks are completed."
+msgstr "这些是每日电子邮件，直到所有逾期任务完成为止。"
+
+#: organization/models.py:88
+msgid ""
+"Add 'todo' and 'resource' buttons to the first message that's being sent to "
+"the new hire."
+msgstr "在发送给新员工的第一条消息中添加“待办事项”和“资源”按钮。"
+
+#: organization/models.py:95
+msgid ""
+"Send a Slack message to the team to collect personal welcome messages from "
+"colleages."
+msgstr "向团队发送Slack消息，收集来自同事的个人欢迎消息。"
+
+#: organization/models.py:102
+msgid "Send a Slack message to the team on the day the new hire starts"
+msgstr "在新员工入职当天向团队发送Slack消息"
+
+#: organization/models.py:107
+msgid "Create a new hire when they join your Slack team"
+msgstr "当新员工加入您的Slack团队时创建一个新员工"
+
+#: organization/models.py:108
+msgid "If the user does not exist yet"
+msgstr "如果用户尚不存在"
+
+#: organization/models.py:112
+msgid "Create new hires without needing confirm from a user"
+msgstr "无需用户确认创建新员工"
+
+#: organization/models.py:117
+msgid "User to sent new hire account requests to"
+msgstr "发送新员工账户请求的用户"
+
+#: organization/models.py:124
+msgid "This is the default channel where the bot will post messages in"
+msgstr "这是机器人发布消息的默认频道"
+
+#: organization/models.py:133
+msgid "This is the channel where the bot will send birthday wishes in. "
+msgstr "这是机器人发送生日祝福的频道。"
+
+#: organization/models.py:136
+msgid "Leave blank to disable this. Timing is based on when this was enabled."
+msgstr "留空以禁用此功能。时间基于启用该功能的时间。"
+
+#: organization/models.py:146
+msgid "Base email template"
+msgstr "基础电子邮件模板"
+
+#: organization/models.py:148
+msgid ""
+"Leave blank to use the default one. See documentation if you want to use "
+"your own."
+msgstr "留空以使用默认模板。如果要使用自己的模板，请参阅文档。"
+
+#: organization/models.py:204
+msgid "pre-boarding"
+msgstr "入职前"
+
+#: organization/models.py:205
+msgid "new hire welcome"
+msgstr "新员工欢迎"
+
+#: organization/models.py:206
+msgid "text welcome"
+msgstr "文本欢迎"
+
+#: organization/models.py:207
+msgid "slack welcome"
+msgstr "Slack欢迎"
+
+#: organization/models.py:208
+msgid "slack knowledge"
+msgstr "Slack知识"
+
+#: organization/models.py:211 users/models.py:105
+msgid "Message"
+msgstr "消息"
+
+#: organization/models.py:281
+msgid "A new to do item has been added"
+msgstr "添加了新的待办事项"
+
+#: organization/models.py:282
+msgid "To do item has been marked as completed"
+msgstr "待办事项已标记为已完成"
+
+#: organization/models.py:283
+msgid "A new resource item has been added"
+msgstr "添加了新的资源项"
+
+#: organization/models.py:284
+msgid "Course has been completed"
+msgstr "课程已完成"
+
+#: organization/models.py:285
+msgid "A new badge item has been added"
+msgstr "添加了新的徽章项"
+
+#: organization/models.py:286
+msgid "A new introduction item has been added"
+msgstr "添加了新的介绍项"
+
+#: organization/models.py:287
+msgid "A new preboarding item has been added"
+msgstr "添加了新的入职前项目"
+
+#: organization/models.py:288
+msgid "A new appointment item has been added"
+msgstr "添加了新的预约项目"
+
+#: organization/models.py:289
+msgid "A new hire has been added"
+msgstr "添加了新的入职员工"
+
+#: organization/models.py:290
+msgid "A new administrator has been added"
+msgstr "添加了新的管理员"
+
+#: organization/models.py:291
+msgid "A new manager has been added"
+msgstr "添加了新的经理"
+
+#: organization/models.py:292
+msgid "A new admin task has been added"
+msgstr "添加了新的管理员任务"
+
+#: organization/models.py:293
+msgid "A new sequence has been added"
+msgstr "添加了新的序列"
+
+#: organization/models.py:294
+msgid "A new email has been sent"
+msgstr "发送了新的电子邮件"
+
+#: organization/models.py:295
+msgid "A new text message has been sent"
+msgstr "发送了新的短信"
+
+#: organization/models.py:296
+msgid "A new slack message has been sent"
+msgstr "发送了新的Slack消息"
+
+#: organization/models.py:297
+msgid "A new slack message has been updated"
+msgstr "更新了新的Slack消息"
+
+#: organization/models.py:298
+msgid "Login credentials have been sent"
+msgstr "发送了登录凭据"
+
+#: organization/models.py:299
+msgid "Reopened task email has been sent"
+msgstr "发送了重新打开任务的电子邮件"
+
+#: organization/models.py:300
+msgid "Task reminder email has been sent"
+msgstr "发送了任务提醒的电子邮件"
+
+#: organization/models.py:301
+msgid "Sent new hire credentials email"
+msgstr "发送了新员工凭据的电子邮件"
+
+#: organization/models.py:302
+msgid "Sent new hire preboarding email"
+msgstr "发送了新员工入职前的电子邮件"
+
+#: organization/models.py:303
+msgid "Sent email from sequence"
+msgstr "从序列发送了电子邮件"
+
+#: organization/models.py:304
+msgid "Sent email with updates to new hire"
+msgstr "发送了包含新员工更新的电子邮件"
+
+#: organization/models.py:305
+msgid "Sent email to extra person in admin task"
+msgstr "向管理员任务中的额外人员发送了电子邮件"
+
+#: organization/models.py:308
+msgid "Sent email about new person assigned to admin task"
+msgstr "发送了关于为管理员任务分配新人的电子邮件"
+
+#: organization/models.py:312
+msgid "Sent email about new comment on admin task"
+msgstr "发送了关于管理员任务上新评论的电子邮件"
+
+#: organization/models.py:316
+msgid "Sent email about completing integration call"
+msgstr "发送了关于完成集成呼叫的电子邮件"
+
+#: organization/models.py:318
+msgid "Couldn't send text message: number is missing"
+msgstr "无法发送短信：缺少号码"
+
+#: organization/models.py:319
+msgid "Couldn't send email message: email is missing"
+msgstr "无法发送电子邮件：缺少邮箱"
+
+#: organization/models.py:322
+msgid "Couldn't deliver email message: recipient refused"
+msgstr "无法发送电子邮件：收件人拒绝"
+
+#: organization/models.py:324 organization/models.py:325
+msgid "Couldn't deliver email message: provider error"
+msgstr "无法发送电子邮件：提供商错误"
+
+#: organization/models.py:326
+msgid "Couldn't send Slack message"
+msgstr "无法发送Slack消息"
+
+#: organization/models.py:327
+msgid "Couldn't update Slack message"
+msgstr "无法更新Slack消息"
+
+#: organization/models.py:328
+msgid "Integration has been triggered"
+msgstr "触发了集成"
+
+#: organization/models.py:329
+msgid "Couldn't complete integration"
+msgstr "无法完成集成"
+
+#: organization/models.py:332
+msgid "Couldn't send integration notification"
+msgstr "无法发送集成通知"
+
+#: organization/templates/notifications.html:17
+msgid "For "
+msgstr "对于"
+
+#: organization/templates/notifications.html:17
+msgid "By "
+msgstr "由"
+
+#: organization/views.py:77
+msgid "Notifications"
+msgstr "通知"
+
+#: organization/views.py:78
+msgid "global"
+msgstr "全局"
+
+#: slack_bot/slack_misc.py:13 slack_bot/slack_misc.py:19
+msgid "Select sequences"
+msgstr "选择序列"
+
+#: slack_bot/slack_misc.py:40
+msgid "Click a button to see more information :)"
+msgstr "点击按钮查看更多信息 :)"
+
+#: slack_bot/slack_resource.py:19
+msgid "View course"
+msgstr "查看课程"
+
+#: slack_bot/slack_resource.py:21
+msgid "View resource"
+msgstr "查看资源"
+
+#: slack_bot/slack_resource.py:44
+msgid "Select chapter"
+msgstr "选择章节"
+
+#: slack_bot/slack_resource.py:86
+msgid "Course"
+msgstr "课程"
+
+#: slack_bot/slack_resource.py:117
+msgid "No resources available"
+msgstr "没有可用的资源"
+
+#: slack_bot/slack_resource.py:121
+msgid "No category"
+msgstr "无类别"
+
+#: slack_bot/slack_resource.py:124 slack_bot/views.py:148
+msgid "Select a category:"
+msgstr "选择一个类别："
+
+#: slack_bot/slack_to_do.py:19
+msgid "This task has no deadline."
+msgstr "此任务没有截止日期。"
+
+#: slack_bot/slack_to_do.py:21
+msgid "This task is overdue"
+msgstr "此任务已逾期"
+
+#: slack_bot/slack_to_do.py:23
+msgid "This task is due today"
+msgstr "此任务今天到期"
+
+#: slack_bot/slack_to_do.py:24
+#, python-format
+msgid "This task needs to be completed in %(amount)s working days"
+msgstr "此任务需要在 %(amount)s 个工作日内完成"
+
+#: slack_bot/slack_to_do.py:31 slack_bot/slack_to_do.py:52
+msgid "View details"
+msgstr "查看详情"
+
+#: slack_bot/slack_to_do.py:34
+msgid "Mark completed"
+msgstr "标记为已完成"
+
+#: slack_bot/slack_to_do.py:81
+msgid "done"
+msgstr "已完成"
+
+#: slack_bot/slack_to_do.py:101 slack_bot/tasks.py:73 slack_bot/tasks.py:77
+#: slack_bot/views.py:172 slack_bot/views.py:561
+msgid "These are the tasks you need to complete:"
+msgstr "以下是您需要完成的任务:"
+
+#: slack_bot/slack_to_do.py:103 slack_bot/views.py:174 slack_bot/views.py:563
+msgid "I couldn't find any tasks."
+msgstr "找不到任何任务。"
+
+#: slack_bot/tasks.py:62
+msgid "Welcome!"
+msgstr "欢迎!"
+
+#: slack_bot/tasks.py:116 slack_bot/tasks.py:120
+msgid "Here are some courses that you need to complete"
+msgstr "以下是您需要完成的一些课程"
+
+#: slack_bot/tasks.py:128
+msgid ""
+"Good morning! These are the tasks you need to complete. Some to do items are "
+"overdue. Please complete those as soon as possible!"
+msgstr ""
+"早上好！以下是您需要完成的任务。有些待办事项已过期。请尽快完成这些任务！"
+
+#: slack_bot/tasks.py:133
+msgid "Good morning! These are the tasks you need to complete today:"
+msgstr "早上好！以下是您今天需要完成的任务："
+
+#: slack_bot/tasks.py:160
+#, python-format
+msgid "Just a quick reminder: It's %(name)s's first day today!"
+msgstr "只是快速提醒一下：今天是 %(name)s 的第一天！"
+
+#: slack_bot/tasks.py:166
+#, python-format
+msgid "We got some new hires coming in! %(names)s are starting today!"
+msgstr "我们有一些新员工要来了！ %(names)s 今天开始！"
+
+#: slack_bot/tasks.py:192
+#, python-format
+msgid "It's %(names)s birthday today!"
+msgstr "今天是 %(names)s 的生日！"
+
+#: slack_bot/tasks.py:218
+msgid ""
+"We got some new hires coming in soon! Make sure to leave a welcome message "
+"for them!"
+msgstr "我们有一些新员工即将到来！请为他们留言欢迎！"
+
+#: slack_bot/tasks.py:223
+#, python-format
+msgid ""
+"We have a new hire coming in soon! Make sure to leave a message for "
+"%(first_name)s!"
+msgstr "我们很快会有一位新员工加入！请给 %(first_name)s 留言！"
+
+#: slack_bot/tasks.py:251
+#, python-format
+msgid " and is our new %(position)s"
+msgstr "是我们的新 %(position)s"
+
+#: slack_bot/tasks.py:256
+#, python-format
+msgid "%(first_name)s starts on %(start_day)s%(footer_extra)s."
+msgstr "%(first_name)s 将于 %(start_day)s 开始 %(footer_extra)s。"
+
+#: slack_bot/tasks.py:269 slack_bot/views.py:731
+msgid "Welcome this new hire!"
+msgstr "欢迎这位新员工！"
+
+#: slack_bot/views.py:88
+msgid ""
+"Happy to help! Here are all the things you can say to me: \n"
+"\n"
+msgstr ""
+"很高兴帮助您！以下是您可以对我说的所有事情：\n"
+"\n"
+
+#: slack_bot/views.py:90
+msgid ""
+"*What do I need to do today?*\n"
+"This will show all the tasks you need to do today. I will show you these "
+"every day as well, but just incase you want to get them again.\n"
+msgstr ""
+"*今天我需要做什么？*\n"
+"这将显示您今天需要完成的所有任务。我每天也会向您展示这些任务，但以防您想再次"
+"获取它们。\n"
+
+#: slack_bot/views.py:95
+msgid ""
+"*Do I have any to do items that are overdue?*\n"
+"This will show all tasks that should have been completed. Please do those as "
+"soon as possible.\n"
+msgstr ""
+"*我有任何过期的待办事项吗？*\n"
+"这将显示所有应该已完成的任务。请尽快完成这些任务。\n"
+
+#: slack_bot/views.py:99
+msgid ""
+"*Show me all to do items*\n"
+"This will show all tasks\n"
+msgstr ""
+"*显示所有待办事项*\n"
+"这将显示所有任务\n"
+
+#: slack_bot/views.py:100
+msgid ""
+"*Show me all resources*\n"
+"This will show all resources."
+msgstr ""
+"*显示所有资源*\n"
+"这将显示所有资源。"
+
+#: slack_bot/views.py:114
+msgid "You don't seem to be setup yet. Please ask your supervisor for access."
+msgstr "您似乎尚未进行设置。请向您的主管申请访问权限。"
+
+#: slack_bot/views.py:164
+msgid "today"
+msgstr "今日"
+
+#: slack_bot/views.py:166
+msgid "overdue"
+msgstr "已过期"
+
+#: slack_bot/views.py:222
+msgid "Please complete the form first. Click on 'View details' to complete it."
+msgstr "请先完成表格。点击“查看详情”进行填写。"
+
+#: slack_bot/views.py:273
+msgid "Here is what I found: "
+msgstr "我找到了以下内容："
+
+#: slack_bot/views.py:275
+msgid "Unfortunately, I couldn't find anything."
+msgstr "很抱歉，我找不到任何内容。"
+
+#: slack_bot/views.py:343
+#, python-format
+msgid ""
+"Would you like to put this new hire through onboarding?\n"
+"*Name:* %(name)s "
+msgstr ""
+"您是否希望进行新员工入职流程？\n"
+"*姓名：* %(name)s "
+
+#: slack_bot/views.py:351
+msgid "Yeah!"
+msgstr "是的！"
+
+#: slack_bot/views.py:356
+msgid "Nope"
+msgstr "不是"
+
+#: slack_bot/views.py:378
+msgid "New hire options"
+msgstr "新员工选项"
+
+#: slack_bot/views.py:421
+#, python-format
+msgid "You approved the request to onboard %(name)s"
+msgstr "您已批准将 %(name)s 纳入入职流程的请求"
+
+#: slack_bot/views.py:440
+msgid "You denied the request to onboard this person."
+msgstr "您拒绝了将此人纳入入职流程的请求。"
+
+#: slack_bot/views.py:473 slack_bot/views.py:481
+msgid "Here are your options:"
+msgstr "以下是您的选项："
+
+#: slack_bot/views.py:706
+msgid "Thanks! This has been marked as completed."
+msgstr "谢谢！已标记为已完成。"
+
+#: slack_bot/views.py:745
+msgid "What would you like to say to our new hire?"
+msgstr "您想对我们的新员工说些什么？"
+
+#: slack_bot/views.py:789
+msgid "Message has been saved! Your message: \""
+msgstr "消息已保存！您的消息: “"
+
+#: user_auth/templates/email/reset.html:2
+msgid "Reset your password!"
+msgstr "重置您的密码！"
+
+#: user_auth/templates/email/reset.html:3
+msgid "Use this link to change your password:"
+msgstr "使用此链接修改您的密码："
+
+#: user_auth/templates/email/reset_subject.txt:2
+msgid "Reset your password"
+msgstr "重置您的密码"
+
+#: user_auth/templates/mfa.html:13 users/templates/login.html:19
+msgid "Log in"
+msgstr "登录"
+
+#: user_auth/views.py:98
+msgid "Google login access token has not been set"
+msgstr "未设置Google登录访问令牌"
+
+#: user_auth/views.py:124
+msgid "Something went wrong with reaching Google. Please try again."
+msgstr "与Google通信出现问题，请重试。"
+
+#: user_auth/views.py:141
+msgid ""
+"There is no account associated with your email address. Did you try to log "
+"in with the correct account?"
+msgstr "没有与您的电子邮件地址关联的帐户。您是否尝试使用正确的帐户登录？"
+
+#: users/emails.py:17
+msgid "Your login credentials!"
+msgstr "您的登录凭据！"
+
+#: users/emails.py:23
+msgid ""
+"Someone in your organisation invited you to join ChiefOnboarding.Here are "
+"your login details:"
+msgstr "您的组织中的某人邀请您加入ChiefOnboarding。以下是您的登录详细信息："
+
+#: users/emails.py:32
+msgid "Username:"
+msgstr "用户名："
+
+#: users/emails.py:34
+msgid "Password:"
+msgstr "密码："
+
+#: users/emails.py:36
+msgid "Login URL:"
+msgstr "登录网址："
+
+#: users/emails.py:58
+msgid "Please redo this task"
+msgstr "请重新执行此任务"
+
+#: users/emails.py:64
+#, python-format
+msgid "Hi %(name)s, we have just reopened this task. %(message)s"
+msgstr "嗨，%(name)s，我们刚刚重新打开了此任务。%(message)s"
+
+#: users/emails.py:72 users/emails.py:110
+#, python-format
+msgid ""
+"<strong>%(task_name)s</strong> <br />Go to your dashboard to complete it"
+msgstr "<strong>%(task_name)s</strong> <br />前往您的仪表板以完成它"
+
+#: users/emails.py:78 users/emails.py:116 users/emails.py:158
+msgid "Dashboard"
+msgstr "仪表板"
+
+#: users/emails.py:93
+msgid "Please complete this task"
+msgstr "请完成此任务"
+
+#: users/emails.py:101
+#, python-format
+msgid "Hi %(name)s, Here is a quick reminder of the following task:"
+msgstr "嗨，%(name)s，这是以下任务的快速提醒："
+
+#: users/emails.py:152
+msgid "Username: "
+msgstr "用户名："
+
+#: users/emails.py:154
+msgid "Password: "
+msgstr "密码："
+
+#: users/emails.py:180
+#, python-format
+msgid "Welcome to %(name)s!"
+msgstr "欢迎 %(name)s！"
+
+#: users/emails.py:186
+msgid "See pages"
+msgstr "查看页面"
+
+#: users/models.py:30
+msgid "New Hire"
+msgstr "新员工"
+
+#: users/models.py:33
+msgid "Other"
+msgstr "其他"
+
+#: users/models.py:90
+msgid "First name"
+msgstr "名字"
+
+#: users/models.py:91
+msgid "Last name"
+msgstr "姓氏"
+
+#: users/models.py:96
+msgid "Birthday"
+msgstr "生日"
+
+#: users/models.py:101
+msgid "Phone"
+msgstr "电话"
+
+#: users/models.py:107
+msgid "Profile image"
+msgstr "个人资料图片"
+
+#: users/models.py:110
+msgid "Linkedin"
+msgstr "领英"
+
+#: users/models.py:113
+msgid "Facebook"
+msgstr "Facebook"
+
+#: users/models.py:116
+msgid "Twitter"
+msgstr "Twitter"
+
+#: users/models.py:125
+msgid "Department"
+msgstr "部门"
+
+#: users/models.py:138
+msgid ""
+"An administrator has access to everything. A manager has only access to "
+"their new hires and their tasks."
+msgstr "管理员可以访问所有内容。经理只能访问他们的新员工和任务。"
+
+#: users/models.py:169
+msgid "First working day"
+msgstr "入职第一天"
+
+#: users/models.py:475
+#, python-format
+msgid "*Our new hire %(name)s just answered some questions:*"
+msgstr "*我们的新员工 %(name)s 刚刚回答了一些问题：*"
+
+#: users/models.py:488
+#, python-format
+msgid "Our new hire %(name)s just answered some questions:"
+msgstr "我们的新员工 %(name)s 刚刚回答了一些问题："
+
+#: users/models.py:607
+#, python-format
+msgid ""
+"%(amount_of_correct_answers)s correct answers out of %(amount_of_questions)s "
+"questions"
+msgstr ""
+"%(amount_of_questions)s 个问题中有 %(amount_of_correct_answers)s 个正确答案"
+
+#: users/templates/admin_base.html:54
+msgid "People"
+msgstr "人员"
+
+#: users/templates/admin_base.html:185
+msgid "Documentation"
+msgstr "文档"
+
+#: users/templates/admin_base.html:190
+msgid "Source code"
+msgstr "源代码"
+
+#: users/templates/admin_base.html:198
+msgid "ChiefOnboarding"
+msgstr "ChiefOnboarding"
+
+#: users/templates/admin_base.html:317
+msgid "Start typing..."
+msgstr "开始输入..."
+
+#: users/templates/login.html:24
+msgid "or"
+msgstr "或"
+
+#: users/templates/login.html:34
+msgid "Log in with Google"
+msgstr "使用Google账号登录"
+
+#: users/templates/login.html:42
+msgid "Forgot password?"
+msgstr "忘记密码？"
+
+#: users/templates/password_change.html:8
+#: users/templates/password_change.html:20
+msgid "Change password"
+msgstr "修改密码"
+
+#: users/templates/password_change.html:14
+msgid ""
+"That didn't go well. This link isn't valid. Please request a new reset URL"
+msgstr "出了些问题。该链接无效。请请求一个新的重置链接"
+
+#: users/templates/password_change.html:27
+#: users/templates/password_reset.html:22
+msgid "Go back to the log in screen"
+msgstr "返回登录界面"
+
+#: users/templates/password_change_done.html:7
+msgid "Your password has been reset"
+msgstr "您的密码已重置"
+
+#: users/templates/password_change_done.html:9
+msgid "You have successfully reset your password."
+msgstr "您的密码已重置。"
+
+#: users/templates/password_change_done.html:13
+#: users/templates/password_reset_done.html:14
+msgid "Go back to the login page"
+msgstr "返回登录页面"
+
+#: users/templates/password_reset.html:8
+msgid "Forgot password"
+msgstr "忘记密码"
+
+#: users/templates/password_reset.html:16
+msgid "Send me a reset link"
+msgstr "发送重置链接给我"
+
+#: users/templates/password_reset_done.html:7
+msgid "Please check your email"
+msgstr "请检查您的电子邮件"
+
+#: users/templates/password_reset_done.html:9
+msgid ""
+"We've emailed you instructions for setting your password, if an account "
+"exists with the email you entered. You should receive that shortly."
+msgstr ""
+"如果您输入的电子邮件已经存在帐户，我们已向您发送了设置密码的说明电子邮件。您"
+"应该很快收到该邮件。"
+
+#: users/templates/password_reset_done.html:10
+msgid ""
+"If you don’t receive an email, please make sure you’ve entered the address "
+"you registered with, and check your spam folder."
+msgstr ""
+"如果您没有收到邮件，请确保您输入的是您注册时使用的电子邮件，并检查您的垃圾邮"
+"件文件夹。"
+
+#~ msgid ""
+#~ "Click on the button to see all the categories that are available to you!"
+#~ msgstr "点击按钮查看所有可用的类别！"
+
+#, python-format
+#~ msgid "For %(full_name)s"
+#~ msgstr "来自 %(full_name)s"
