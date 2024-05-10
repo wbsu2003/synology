@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:15
+    container_name: chiefonboarding-db
+    restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=chiefonboarding
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  web:
+    image: chiefonboarding/chiefonboarding:latest
+    container_name: chiefonboarding-web
+    restart: always
+    ports:
+      - 8203:8000
+    environment:
+      #- DEBUG=True
+      - HTTP_INSECURE=True
+      - SECRET_KEY=somethingsupersecret
+      - BASE_URL=http://192.168.0.197:8203
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/chiefonboarding
+      - ALLOWED_HOSTS=192.168.0.197
+    depends_on:
+      - db
