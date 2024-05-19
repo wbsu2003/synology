@@ -1,0 +1,338 @@
+version: '3'
+
+services:
+  # API service
+  # API服务
+  api:
+    image: langgenius/dify-api:0.6.8
+    container_name: dify-api
+    restart: always
+    environment:
+      # Startup mode, 'api' starts the API server.
+      # 启动模式，设置为 'api' 指启动 API 服务器。
+      MODE: api
+      # The log level for the application. Supported values are `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+      # 应用的日志级别。支持的值有 `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+      LOG_LEVEL: INFO
+      # A secret key that is used for securely signing the session cookie and encrypting sensitive information on the database. You can generate a strong key using `openssl rand -base64 42`.
+      # 用于安全签名会话 cookie 和加密数据库上敏感信息的密钥。你可以使用 `openssl rand -base64 42` 生成一个强密钥。
+      SECRET_KEY: sk-9f73s3ljTXVcMT3Blb3ljTqtsKiGHXVcMT3BlbkFJLK7U
+      # The base URL of console application web frontend, refers to the Console base URL of WEB service if console domain is
+      # different from api or web app domain.
+      # 控制台应用程序 web 前端的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
+      # example: http://cloud.dify.ai
+      # 例如：http://cloud.dify.ai
+      CONSOLE_WEB_URL: ''
+      # Password for admin user initialization.
+      # 管理员用户初始化的密码。
+      # If left unset, admin user will not be prompted for a password when creating the initial admin account.
+      # 如果未设置，创建初始管理员账户时将不会提示输入密码。
+      INIT_PASSWORD: ''
+      # The base URL of console application api server, refers to the Console base URL of WEB service if console domain is
+      # different from api or web app domain.
+      # 控制台应用程序 API 服务器的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
+      # example: http://cloud.dify.ai
+      # 例如：http://cloud.dify.ai
+      CONSOLE_API_URL: ''
+      # The URL prefix for Service API endpoints, refers to the base URL of the current API service if api domain is
+      # different from console domain.
+      # 服务 API 端点的 URL 前缀，如果 api 域与控制台域不同，指的是当前 API 服务的基础 URL。
+      # example: http://api.dify.ai
+      # 例如：http://api.dify.ai
+      SERVICE_API_URL: ''
+      # The URL prefix for Web APP frontend, refers to the Web App base URL of WEB service if web app domain is different from
+      # console or api domain.
+      # Web APP前端的URL前缀，如果 web 应用程序域与控制台或 api 域不同，指的是 WEB 服务的 Web 应用程序基础 URL。
+      # example: http://udify.app
+      # 例如：http://udify.app
+      APP_WEB_URL: ''
+      # File preview or download Url prefix.
+      # 文件预览或下载的 URL 前缀。
+      # used to display File preview or download Url to the front-end or as Multi-model inputs;
+      # 用于向前端显示文件预览或下载 URL，或作为多模型输入；
+      # Url is signed and has expiration time.
+      # URL 已签名并具有过期时间。
+      FILES_URL: ''
+      # When enabled, migrations will be executed prior to application startup and the application will start after the migrations have completed.
+      # 当启用时，迁移将在应用程序启动之前执行，迁移完成后应用程序将启动。
+      MIGRATION_ENABLED: 'true'
+      # The configurations of postgres database connection.
+      # postgres 数据库连接的配置。
+      # It is consistent with the configuration in the 'db' service below.
+      # 它与下面的 'db' 服务中的配置一致。
+      DB_USERNAME: postgres
+      DB_PASSWORD: difyai123456
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: dify
+      # The configurations of redis connection.
+      # redis 连接的配置。
+      # It is consistent with the configuration in the 'redis' service below.
+      # 它与下面的 'redis' 服务中的配置一致。
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_USERNAME: ''
+      REDIS_PASSWORD: difyai123456
+      REDIS_USE_SSL: 'false'
+      # use redis db 0 for redis cache
+      # 使用 redis 数据库 0 作为 redis 缓存
+      REDIS_DB: 0
+      # The configurations of celery broker.
+      # celery 代理的配置。
+      # Use redis as the broker, and redis db 1 for celery broker.
+      # 使用 redis 作为代理，redis 数据库 1 作为 celery 代理。
+      CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
+      # Specifies the allowed origins for cross-origin requests to the Web API, e.g. https://dify.app or * for all origins.
+      # 指定 Web API 跨域请求的允许来源，例如 https://dify.app 或 * 表示所有来源。
+      WEB_API_CORS_ALLOW_ORIGINS: '*'
+      # Specifies the allowed origins for cross-origin requests to the console API, e.g. https://cloud.dify.ai or * for all origins.
+      # 指定控制台 API 跨域请求的允许来源，例如 https://cloud.dify.ai 或 * 表示所有来源。
+      CONSOLE_CORS_ALLOW_ORIGINS: '*'
+      # CSRF Cookie settings
+      # Controls whether a cookie is sent with cross-site requests,
+      # providing some protection against cross-site request forgery attacks
+      # CSRF Cookie 设置
+      # 控制是否发送 cookie 与跨站请求，
+      # 提供一些针对跨站请求伪造攻击的保护
+      #
+      # Default: `SameSite=Lax, Secure=false, HttpOnly=true`
+      # This default configuration supports same-origin requests using either HTTP or HTTPS,
+      # but does not support cross-origin requests. It is suitable for local debugging purposes.
+      # 默认值：`SameSite=Lax, Secure=false, HttpOnly=true`
+      # 此默认配置支持使用 HTTP 或 HTTPS 的同源请求，
+      # 但不支持跨源请求。它适用于本地调试目的。
+      #
+      # If you want to enable cross-origin support,
+      # you must use the HTTPS protocol and set the configuration to `SameSite=None, Secure=true, HttpOnly=true`.
+      # 如果您想启用跨源支持，
+      # 您必须使用 HTTPS 协议，并将配置设置为 `SameSite=None, Secure=true, HttpOnly=true`。
+      #
+      # The type of storage to use for storing user files. Supported values are `local` and `s3` and `azure-blob` and `google-storage`, Default: `local`
+      # 用于存储用户文件的存储类型。支持的值有 `local` 和 `s3` 和 `azure-blob` 和 `google-storage`，默认值：`local`
+      STORAGE_TYPE: local
+      # The path to the local storage directory, the directory relative the root path of API service codes or absolute path. Default: `storage` or `/home/john/storage`.
+      # 本地存储目录的路径，相对于API服务代码根路径的目录或绝对路径。默认值：`storage` 或 `/home/john/storage`。
+      # only available when STORAGE_TYPE is `local`.
+      # 只有在STORAGE_TYPE为`local`时才可用。
+      STORAGE_LOCAL_PATH: storage
+      # The type of vector store to use. Supported values are `weaviate`, `qdrant`, `milvus`, `relyt`.
+      # 要使用的向量存储类型。支持的值有 `weaviate`, `qdrant`, `milvus`, `relyt`。
+      VECTOR_STORE: weaviate
+      # The Weaviate endpoint URL. Only available when VECTOR_STORE is `weaviate`.
+      # Weaviate 端点 URL。只有在 VECTOR_STORE 为 `weaviate` 时才可用。
+      WEAVIATE_ENDPOINT: http://weaviate:8080
+      # The Weaviate API key.
+      # Weaviate API密钥。
+      WEAVIATE_API_KEY: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
+      # The DSN for Sentry error reporting. If not set, Sentry error reporting will be disabled.
+      # Sentry 错误报告的 DSN。如果未设置，Sentry 错误报告将被禁用。
+      SENTRY_DSN: ''
+      # The sample rate for Sentry events. Default: `1.0`
+      # Sentry 事件的采样率。默认值：`1.0`
+      SENTRY_TRACES_SAMPLE_RATE: 1.0
+      # The sample rate for Sentry profiles. Default: `1.0`
+      # Sentry 配置文件的采样率。默认值：`1.0`
+      SENTRY_PROFILES_SAMPLE_RATE: 1.0
+    depends_on:
+      - db
+      - redis
+    volumes:
+      # Mount the storage directory to the container, for storing user files.
+      # 将存储目录挂载到容器上，用于存储用户文件。
+      - ./storage:/app/api/storage
+    # uncomment to expose dify-api port to host
+    # 注释掉以暴露 dify-api 端口到主机
+    # ports:
+    #   - "5001:5001"
+
+  # worker service
+  # The Celery worker for processing the queue.
+  # 用于处理队列的 Celery 工作器。
+  worker:
+    image: langgenius/dify-api:0.6.8
+    container_name: dify-worker
+    restart: always
+    environment:
+      CONSOLE_WEB_URL: ''
+      # Startup mode, 'worker' starts the Celery worker for processing the queue.
+      # 启动模式，设置为 'worker' 启动 Celery 工作器以处理队列。
+      MODE: worker
+
+      # --- All the configurations below are the same as those in the 'api' service. ---
+      # --- 下面的所有配置都与'api'服务中的相同。 ---
+
+      # The log level for the application. Supported values are `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+      # 应用的日志级别。支持的值有 `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+      LOG_LEVEL: INFO
+      # A secret key that is used for securely signing the session cookie and encrypting sensitive information on the database. You can generate a strong key using `openssl rand -base64 42`.
+      # 用于安全签名会话 cookie 和加密数据库上敏感信息的密钥。你可以使用 `openssl rand -base64 42` 生成一个强密钥。
+      # same as the API service
+      # 与 API 服务相同
+      SECRET_KEY: sk-9f73s3ljTXVcMT3Blb3ljTqtsKiGHXVcMT3BlbkFJLK7U
+      # The configurations of postgres database connection.
+      # postgres 数据库连接的配置。
+      # It is consistent with the configuration in the 'db' service below.
+      # 它与下面的'db'服务中的配置一致。
+      DB_USERNAME: postgres
+      DB_PASSWORD: difyai123456
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: dify
+      # The configurations of redis cache connection.
+      # redis 缓存连接的配置。
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_USERNAME: ''
+      REDIS_PASSWORD: difyai123456
+      REDIS_DB: 0
+      REDIS_USE_SSL: 'false'
+      # The configurations of celery broker.
+      # celery 代理的配置。
+      CELERY_BROKER_URL: redis://:difyai123456@redis:6379/1
+      # The type of storage to use for storing user files. Supported values are `local` and `s3` and `azure-blob` and `google-storage`, Default: `local`
+      # 用于存储用户文件的存储类型。支持的值有 `local` 和 `s3` 和 `azure-blob` 和 `google-storage`，默认值：`local`
+      STORAGE_TYPE: local
+      STORAGE_LOCAL_PATH: storage
+      # The type of vector store to use. Supported values are `weaviate`, `qdrant`, `milvus`, `relyt`, `pgvector`.
+      # 要使用的向量存储类型。支持的值有 `weaviate`, `qdrant`, `milvus`, `relyt`, `pgvector`。
+      VECTOR_STORE: weaviate
+      # The Weaviate endpoint URL. Only available when VECTOR_STORE is `weaviate`.
+      # Weaviate 端点 URL。只有在 VECTOR_STORE 为 `weaviate` 时才可用。
+      WEAVIATE_ENDPOINT: http://weaviate:8080
+      # The Weaviate API key.
+      # Weaviate API 密钥。
+      WEAVIATE_API_KEY: WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih
+    depends_on:
+      - db
+      - redis
+    volumes:
+      # Mount the storage directory to the container, for storing user files.
+      # 将存储目录挂载到容器上，用于存储用户文件。
+      - ./storage:/app/api/storage
+
+  # Frontend web application.
+  # 前端 web 应用程序。
+  web:
+    image: langgenius/dify-web:0.6.8
+    container_name: dify-web
+    restart: always
+    environment:
+      # The base URL of console application api server, refers to the Console base URL of WEB service if console domain is
+      # different from api or web app domain.
+      # 控制台应用程序 API 服务器的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
+      # example: http://cloud.dify.ai
+      # 例如：http://cloud.dify.ai
+      CONSOLE_API_URL: ''
+      # The URL for Web APP api server, refers to the Web App base URL of WEB service if web app domain is different from
+      # console or api domain.
+      # Web APP api 服务器的 URL，如果 web 应用程序域与控制台或 api 域不同，指的是 WEB 服务的 Web 应用程序基础 URL。
+      # example: http://udify.app
+      # 例如：http://udify.app
+      APP_API_URL: ''
+      # The DSN for Sentry error reporting. If not set, Sentry error reporting will be disabled.
+      # Sentry 错误报告的 DSN。如果未设置，Sentry 错误报告将被禁用。
+      SENTRY_DSN: ''
+    # uncomment to expose dify-web port to host
+    # 注释掉以暴露 dify-web 端口到主机
+    # ports:
+    #   - "3000:3000"
+
+  # The postgres database.
+  # postgres数据库。
+  db:
+    image: postgres:15-alpine
+    container_name: dify-db
+    restart: always
+    environment:
+      PGUSER: postgres
+      # The password for the default postgres user.
+      # 默认 postgres 用户的密码。
+      POSTGRES_PASSWORD: difyai123456
+      # The name of the default postgres database.
+      # 默认 postgres 数据库的名称。
+      POSTGRES_DB: dify
+      TZ: Asia/Shanghai
+      # postgres data directory
+      # postgres 数据目录
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./db:/var/lib/postgresql/data
+    # uncomment to expose db(postgresql) port to host
+    # 注释掉以暴露 db(postgresql) 端口到主机
+    # ports:
+    #   - "5432:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  # The redis cache.
+  # redis 缓存。
+  redis:
+    image: redis:6-alpine
+    container_name: dify-redis
+    restart: always
+    volumes:
+      # Mount the redis data directory to the container.
+      # 将 redis 数据目录挂载到容器上。
+      - ./redis:/data
+    # Set the redis password when startup redis server.
+    # 启动 redis 服务器时设置 redis 密码。
+    command: redis-server --requirepass difyai123456
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+    # uncomment to expose redis port to host
+    # 注释掉以暴露redis端口到主机
+    # ports:
+    #   - "6379:6379"
+
+  # The Weaviate vector store.
+  # Weaviate 向量存储。
+  weaviate:
+    image: semitechnologies/weaviate:1.19.0
+    container_name: dify-weaviate
+    restart: always
+    volumes:
+      # Mount the Weaviate data directory to the container.
+      # 将Weaviate数据目录挂载到容器上。
+      - ./weaviate:/var/lib/weaviate
+    environment:
+      # The Weaviate configurations
+      # Weaviate 配置
+      # You can refer to the [Weaviate](https://weaviate.io/developers/weaviate/config-refs/env-vars) documentation for more information.
+      # 你可以查阅 [Weaviate](https://weaviate.io/developers/weaviate/config-refs/env-vars) 文档以获取更多信息。
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'false'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'none'
+      CLUSTER_HOSTNAME: 'node1'
+      AUTHENTICATION_APIKEY_ENABLED: 'true'
+      AUTHENTICATION_APIKEY_ALLOWED_KEYS: 'WVF5YThaHlkYwhGUSmCRgsX3tD5ngdN8pkih'
+      AUTHENTICATION_APIKEY_USERS: 'hello@dify.ai'
+      AUTHORIZATION_ADMINLIST_ENABLED: 'true'
+      AUTHORIZATION_ADMINLIST_USERS: 'hello@dify.ai'
+    # uncomment to expose weaviate port to host
+    # 注释掉以暴露 weaviate 端口到主机
+    # ports:
+    #  - "8080:8080"
+
+  # The nginx reverse proxy.
+  # nginx 反向代理
+  # used for reverse proxying the API service and Web service.
+  # 用于 API 服务和 Web 服务的反向代理。
+  nginx:
+    image: nginx:latest
+    container_name: dify-nginx
+    restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/proxy.conf:/etc/nginx/proxy.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      #- ./nginx/ssl:/etc/ssl
+    depends_on:
+      - api
+      - web
+    ports:
+      - "8848:80"
+      #- "443:443"
