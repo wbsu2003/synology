@@ -153,7 +153,7 @@ services:
     container_name: dify-worker
     restart: always
     environment:
-      CONSOLE_WEB_URL: ''
+      CONSOLE_WEB_URL: 'http://192.168.0.197:8848'
       # Startup mode, 'worker' starts the Celery worker for processing the queue.
       # 启动模式，设置为 'worker' 启动 Celery 工作器以处理队列。
       MODE: worker
@@ -222,13 +222,13 @@ services:
       # 控制台应用程序 API 服务器的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
       # example: http://cloud.dify.ai
       # 例如：http://cloud.dify.ai
-      CONSOLE_API_URL: ''
+      CONSOLE_API_URL: 'http://192.168.0.197:8848'
       # The URL for Web APP api server, refers to the Web App base URL of WEB service if web app domain is different from
       # console or api domain.
       # Web APP api 服务器的 URL，如果 web 应用程序域与控制台或 api 域不同，指的是 WEB 服务的 Web 应用程序基础 URL。
       # example: http://udify.app
       # 例如：http://udify.app
-      APP_API_URL: ''
+      APP_API_URL: 'http://192.168.0.197:8848'
       # The DSN for Sentry error reporting. If not set, Sentry error reporting will be disabled.
       # Sentry 错误报告的 DSN。如果未设置，Sentry 错误报告将被禁用。
       SENTRY_DSN: ''
