@@ -22,7 +22,7 @@ services:
       # 控制台应用程序 web 前端的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
       # example: http://cloud.dify.ai
       # 例如：http://cloud.dify.ai
-      CONSOLE_WEB_URL: ''
+      CONSOLE_WEB_URL: 'http://192.168.0.197:8848'
       # Password for admin user initialization.
       # 管理员用户初始化的密码。
       # If left unset, admin user will not be prompted for a password when creating the initial admin account.
@@ -33,26 +33,26 @@ services:
       # 控制台应用程序 API 服务器的基础 URL，如果控制台域与 api 或 web 应用程序域不同，指的是 WEB 服务的控制台基础 URL。
       # example: http://cloud.dify.ai
       # 例如：http://cloud.dify.ai
-      CONSOLE_API_URL: ''
+      CONSOLE_API_URL: 'http://192.168.0.197:8848'
       # The URL prefix for Service API endpoints, refers to the base URL of the current API service if api domain is
       # different from console domain.
       # 服务 API 端点的 URL 前缀，如果 api 域与控制台域不同，指的是当前 API 服务的基础 URL。
       # example: http://api.dify.ai
       # 例如：http://api.dify.ai
-      SERVICE_API_URL: ''
+      SERVICE_API_URL: 'http://192.168.0.197:8848'
       # The URL prefix for Web APP frontend, refers to the Web App base URL of WEB service if web app domain is different from
       # console or api domain.
       # Web APP前端的URL前缀，如果 web 应用程序域与控制台或 api 域不同，指的是 WEB 服务的 Web 应用程序基础 URL。
       # example: http://udify.app
       # 例如：http://udify.app
-      APP_WEB_URL: ''
+      APP_WEB_URL: 'http://192.168.0.197:8848'
       # File preview or download Url prefix.
       # 文件预览或下载的 URL 前缀。
       # used to display File preview or download Url to the front-end or as Multi-model inputs;
       # 用于向前端显示文件预览或下载 URL，或作为多模型输入；
       # Url is signed and has expiration time.
       # URL 已签名并具有过期时间。
-      FILES_URL: ''
+      FILES_URL: 'http://192.168.0.197:8848'
       # When enabled, migrations will be executed prior to application startup and the application will start after the migrations have completed.
       # 当启用时，迁移将在应用程序启动之前执行，迁移完成后应用程序将启动。
       MIGRATION_ENABLED: 'true'
