@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+   aipan-netdisk-search:
+     # image: unilei/aipan-netdisk-search:amd64
+     image: wbsu2003/aipan-netdisk-search:latest
+     container_name: aipan-netdisk-search-app
+     restart: unless-stopped
+     ports:
+        - 3295:3000
+     env_file:
+      - ./env.txt
+     depends_on:
+        postgres:
+          condition: service_healthy 
+        
+   postgres:
+     image: postgres:15
+     container_name: aipan-netdisk-search-db
+     restart: unless-stopped
+     ports:
+        - 5433:5432
+     volumes:
+        - ./data:/var/lib/postgresql/data
+     environment:
+        POSTGRES_USER: ${POSTGRES_USER}
+        POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+        POSTGRES_DB: ${POSTGRES_DB}
+     healthcheck:
+        test: ['CMD-SHELL', 'pg_isready -d ${POSTGRES_DB} -U ${POSTGRES_USER}']
+        interval: 10s
+        timeout: 5s
+        retries: 5
