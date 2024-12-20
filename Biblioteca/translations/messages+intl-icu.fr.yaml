@@ -1,0 +1,60 @@
+page: 页
+search: 搜索
+save.current.filtering: '保存当前过滤'
+new.shelf: '新书架'
+author: 作者
+serie: 系列
+index: 索引
+rename: 重命名
+upload: 上传
+upload.cover: '上传封面'
+picture.for: '图片为'
+no.picture.for: __no.picture.for
+download: 下载
+title: 标题
+authors: 作者们
+summary: 摘要
+publisher: 出版社
+tags: 标签
+verified: 已验证
+book: 书籍
+image: 图片
+suggested.images: '推荐图片'
+search.google.images: '在 Google 图片中搜索'
+search.goodreads: '在 Goodreads 上搜索'
+google.books.api: '来自 Google Books 的建议'
+openlibrary.api: '来自 OpenLibrary 的建议'
+extract.from-file: '从文件中提取封面'
+books.in.serie: '系列中的书籍'
+books.same.index: '同一索引的书籍'
+other.books: '其他书籍'
+books.same.author: '同一作者的书籍'
+missing.book: '缺失的书籍'
+books: 书籍
+reading.list: '阅读清单'
+reading.list.finished: '已完成'
+reading.list.showall: '查看阅读清单中的所有书籍'
+add_to_favorites: '通过点击书籍页面上的书签图标将书籍添加到您的阅读清单。'
+series_in_progress: '进行中的系列'
+need_inspiration: '需要一些灵感吗？'
+continue.reading: '继续阅读'
+hello: 你好
+menu.home: '主页'
+menu.books: '书籍'
+menu.authors: '作者'
+menu.series: '系列'
+menu.tags: '标签'
+menu.shelves: '书架'
+menu.allbooks: '所有书籍'
+menu.admin: '管理面板'
+menu.addbooks: '添加书籍'
+menu.useradmin: '管理用户'
+menu.upload: '上传'
+menu.notverified: '未验证'
+menu.profile: '我的个人资料'
+menu.logout: '注销'
+menu.timeline: '我的时间线'
+menu.kobodevices: 'Kobo 设备'
+menu.editshelves: '编辑书架'
+menu.readinglist: '阅读清单'
+filter.serie: '按系列过滤'
