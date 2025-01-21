@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: tellordb
+      MYSQL_USER: telloruser
+      MYSQL_PASSWORD: tellorpasswd
+
+  web:
+    image: wbsu2003/tellor:v1
+    ports:
+      - "3438:80"
+    environment:
+      DB_DATABASE: tellordb
+      DB_USER: telloruser
+      DB_PASSWORD: tellorpasswd
+      DB_HOST: mysql
+    depends_on:
+      - mysql
